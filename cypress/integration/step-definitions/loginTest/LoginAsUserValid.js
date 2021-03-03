@@ -22,8 +22,13 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
     And('Set password', () => {
     loggedElements
         .setPassword();
+    });
 
+    And('Check Remember Me', () => {
+        loggedElements
+            .rememberMe();
 });
+
     And('Click on log in button', () => {
     loggedElements
         .clickLoginButton();
@@ -34,7 +39,7 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 Then('Auth is successfully', () =>{
     cy.url()
         .should('include', '/implicit/callback');
-    cy.wait(2000)
+    cy.wait(2000);
     cy.url()
         .should('include', '/dashboard')
 

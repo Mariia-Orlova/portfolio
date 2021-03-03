@@ -6,6 +6,7 @@ Feature: Auth to Tech2B as  user
     Then  Check elements form
     When Set username
     And Set password
+    And Check Remember Me
     And Click on log in button
     Then Auth is successfully
 
