@@ -1,0 +1,15 @@
+{
+  "titleMembership": "Title membership",
+  "descriptionMembership": "Description Membership",
+  "urlCtaButtonMembership": "https:/google.com",
+  "linkCtaButtonTextMembership": "Link Text Membership",
+  "urlMembershipPageLink": "https:/google.com",
+  "linkTextMembershipPageLink": "link Text Membership PageLink",
+  "titleSliderMembership": "title Slider Membership",
+  "descriptionSlider": "description Slider",
+  "urlCtaButtonSlider": "https://google.com",
+  "linkTextSlider": "link Text Slider",
+  "dateSlider": "2020-10-10",
+  "timeSlider": "10:10:10",
+  "scrollMenuLabel": "scroll Menu Label"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "tech2b",
+  "version": "1.0.0",
+  "description": "tech2b",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "cypress:open": "cypress open",
+    "cypress:run": "node cypress/plugins/cypress.js",
+    "cypress:verify": "cypress verify",
+    "delete:reports": "rm mochawesome-report/* || true",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "author": "tech2b",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^6.6.0",
+    "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-iframe": "^1.0.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^1.6.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/integration/"
+  }
+}

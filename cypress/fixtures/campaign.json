@@ -1,0 +1,20 @@
+{
+  "title": "Campaign test",
+  "summary": "Test Summary",
+  "description": "Test Description",
+  "additionalLabel" : "Additional information",
+  "additionalDescription" : "Additional description",
+  "titleMainBanner": "Main banner",
+  "descriptionMainBanner": "Description Main Banner",
+  "urlMainBanner" : "https://google.com",
+  "linkTextMainBanner" : "Read More",
+  "dateMainBanner" : "2020-10-10",
+  "timeMainBanner" : "10:10:10",
+  "tabNameMainBanner" : "Main Banner tab",
+  "campaignTypeDetailsInformation": "bonus_points",
+  "startDateMainBannerDetailsInformation": "2020-10-10",
+  "endDateMainBannerDetailsInformation": "2020-12-12",
+  "prizeDetailsInformation": "Prize",
+  "drawDateDetailsInformation": "Draw date",
+  "campaignNameSubscription": "test@test.com"
+}
