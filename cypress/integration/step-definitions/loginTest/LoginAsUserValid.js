@@ -7,6 +7,8 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
         .openSite();
     cy.url()
         .should('include', '/login');
+    cy.title()
+        .should('eq', 'Tech2B');
 });
 
     Then('Check elements form', () => {

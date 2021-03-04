@@ -15,7 +15,3 @@ Feature: Auth to Tech2B as  user
     And Click on log in button
     Then Auth is unsuccessfully
 
-
-
-
-
