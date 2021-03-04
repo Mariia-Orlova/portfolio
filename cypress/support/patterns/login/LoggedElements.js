@@ -1,13 +1,17 @@
 const form ='#form';
-const  logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
+const logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
 const rememberCheckbox ='.custom-checkbox > label';
+const userNameLabel = '//label[contains(text(),Username")]';
+const passwordLabel = '//label[contains(text(),"Password")]';
 const usernameInput = '#okta-signin-username'; //input username
 const passwordInput = '#okta-signin-password';//input password
 const loginButton = '#okta-signin-submit';//Log in button
 const forgetPassword = '.forgot-password';
 const registerBlock = '.register';
 const errorMessage = '.okta-form-infobox-error';
-
+const errorMessageNull = '[data-se="o-form-error-container"]';
+const errorMessageUserName ='input-container-error8';
+const errorMessagePassword = 'input-container-error9';
 
 beforeEach(() => {
     cy.fixture('user').as('userCredential');
@@ -32,6 +36,14 @@ export class LoggedElements {
         cy.xpath(logo)
             .should ('be.visible')
             .should ('have.attr', 'src', 'assets/images/logos/t2b-logo-text.svg');
+
+        cy.xpath(userNameLabel)
+            .should( 'be.visible')
+            .should ('contain', 'Username');
+
+        cy.xpath(passwordLabel)
+            .should( 'be.visible')
+            .should ('contain', 'Password');
 
         cy.get(usernameInput)
             .should ('be.visible')
@@ -104,11 +116,18 @@ export class LoggedElements {
     showErrorMessage(){
         cy.get (errorMessage)
             .should ('be.visible')
-            .should ('contain', '')
+            .should ('contain', 'We found some errors. Please review the form and make corrections.')
     }
     showErrorMessageNull(){
-        cy.contains ('Ввести имя пользователя');
-        cy.contains ('Ввести пароль');
+        cy.get (errorMessageNull)
+            .should ('be.visible')
+            .contains('eq', '');
+        cy.get (errorMessageUserName)
+            .should ('be.visible')
+            .contains('eq', 'Please enter a username');
+        cy.get (errorMessagePassword)
+            .should ('be.visible')
+            .contains('eq', 'Please enter a password');
     }
 
 

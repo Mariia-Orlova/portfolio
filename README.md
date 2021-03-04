@@ -4,5 +4,4 @@ End-to-End testing for Application
 1. Login page
    Auth:
    - Positive case
-   - Negetive cases
-  Forget password
+   - Negative cases
