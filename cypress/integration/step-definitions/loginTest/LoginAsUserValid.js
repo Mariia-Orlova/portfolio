@@ -1,29 +1,21 @@
-import { Given,When,Then,And } from "cypress-cucumber-preprocessor/steps";
-import {loggedElements} from "../../../support/patterns/login/LoggedElements";
+import {When,Then,And } from "cypress-cucumber-preprocessor/steps";
+import {LoggedElements} from "../../../support/patterns/login/LoggedElements";
 
+const loggedElements = new LoggedElements();
+const usernameInput = '#okta-signin-username'; //input username
+const passwordInput = '#okta-signin-password';//input password
 
-    Given('Open login page', () => {
-    loggedElements
-        .openSite();
-    cy.url()
-        .should('include', '/login');
-    cy.title()
-        .should('eq', 'Tech2B');
+    When('Set username {string}', (email) => {
+    cy.get(usernameInput)
+        .type(email)
+        .should('have.value', email);
+
 });
 
-    Then('Check elements form', () => {
-    loggedElements
-        .checkElementsInForm();
-});
-
-    When('Set username', () => {
-    loggedElements
-        .setUsername();
-});
-
-    And('Set password', () => {
-    loggedElements
-        .setPassword();
+    And('Set password {string}', (password) => {
+        cy.get(passwordInput)
+            .type(password)
+            .should('have.value', password);
     });
 
     And('Check Remember Me', () => {
@@ -41,7 +33,7 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 Then('Auth is successfully', () =>{
     cy.url()
         .should('include', '/implicit/callback');
-    cy.wait(2000);
+    cy.wait(4000);
     cy.url()
         .should('include', '/dashboard')
 

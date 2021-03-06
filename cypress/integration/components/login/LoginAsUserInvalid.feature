@@ -6,12 +6,15 @@ Feature: Auth to Tech2B as  user
     Then  Check elements form
 
   Scenario: Check logged if user nothing fills
-     And Click on log in button
+     And  Click on log in button
      Then Validation is shown on screen
 
-  Scenario: Check logged to Tech2B as User using invalid values
-    When Set username invalid
-    And Set password invalid
+  Scenario Outline: Check logged to Tech2B as User using invalid values
+    When Set username "<UserName>" invalid
+    And Set password "<PassWord>" invalid
     And Click on log in button
-    Then Auth is unsuccessfully
+    And Auth is unsuccessfully because is displayed error message
 
+    Examples:
+      | UserName | PassWord
+      | test     | test
