@@ -1,17 +1,4 @@
-const form ='#form';
-const logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
-const rememberCheckbox ='.custom-checkbox > label';
-const userNameLabel = '//label[contains(text(),Username")]';
-const passwordLabel = '//label[contains(text(),"Password")]';
-const usernameInput = '#okta-signin-username'; //input username
-const passwordInput = '#okta-signin-password';//input password
-const loginButton = '#okta-signin-submit';//Log in button
-const forgetPassword = '.forgot-password';
-const registerBlock = '.register';
-const errorMessage = '.okta-form-infobox-error';
-const errorMessageNull = '[data-se="o-form-error-container"]';
-const errorMessageUserName ='input-container-error8';
-const errorMessagePassword = 'input-container-error9';
+
 
 beforeEach(() => {
     cy.fixture('user').as('userCredential');
@@ -19,8 +6,20 @@ beforeEach(() => {
 
 
 export class LoggedElements {
-
-
+   form ='#form';
+   logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
+   rememberCheckbox ='.custom-checkbox > label';
+   userNameLabel = '//label[contains(text(),\'Username\')]';
+   passwordLabel = '//label[contains(text(),"Password")]';
+   usernameInput = '#okta-signin-username'; //input username
+   passwordInput = '#okta-signin-password';//input password
+   loginButton = '#okta-signin-submit';//Log in button
+   forgetPassword = '.forgot-password';
+   registerBlock = '.register';
+   createAnAccountLink = '//a[contains(text(),\'Create an account\')]';
+   errorMessageNull = '[data-se="o-form-error-container"]';
+   errorMessageUserName ='input-container-error8';
+   errorMessagePassword = 'input-container-error9';
 
     openSite() {
         cy.visit('/');
@@ -28,106 +27,70 @@ export class LoggedElements {
     };
 
     checkElementsInForm(){
-        cy.get(form)
+        cy.get(this.form)
              .should ('be.visible');
 
         cy.contains('Login to your account');
 
-        cy.xpath(logo)
+        cy.xpath(this.logo)
             .should ('be.visible')
             .should ('have.attr', 'src', 'assets/images/logos/t2b-logo-text.svg');
 
-        cy.xpath(userNameLabel)
+        cy.xpath(this.userNameLabel)
             .should( 'be.visible')
             .should ('contain', 'Username');
 
-        cy.xpath(passwordLabel)
+        cy.xpath(this.passwordLabel)
             .should( 'be.visible')
             .should ('contain', 'Password');
 
-        cy.get(usernameInput)
+        cy.get(this.usernameInput)
             .should ('be.visible')
             .should ('be.empty');
 
-        cy.get (passwordInput)
+        cy.get (this.passwordInput)
             .should ('be.visible')
             .should ('be.empty');
 
-        cy.get (rememberCheckbox)
+        cy.get (this.rememberCheckbox)
             .should ('be.visible');
 
-        cy.get (loginButton)
+        cy.get (this.loginButton)
             .should ('be.visible');
 
-        cy.get (forgetPassword)
+        cy.get (this.forgetPassword)
             .should ('be.visible')
-            .should ('contain', ' Forgot Password ');
+            .should ('contain', ' Forgot Password ')
+            .should ('have.attr','href', '/reset-password');
 
-        cy.get (registerBlock)
+        cy.get (this.registerBlock)
             .should ('be.visible')
             .should ('contain', 'Don\'t have an account?')
             .should ('contain', 'Create an account');
+         cy.xpath (this.createAnAccountLink)
+            .should ('have.attr','href', '/signup');
 
-    }
-
-    setUsername(){
-        cy.get('@userCredential').then(user => {
-        cy.get(usernameInput)
-            .type(user.username)
-            .should('have.value', user.username);
-})
-    }
-    setUsernameInvalid(){
-        cy.get('@userCredential').then(user => {
-            cy.get(usernameInput)
-                .type(user.usernameInvalid)
-                .should('have.value', user.usernameInvalid);
-        })
-    }
-
-    setPassword(){
-        cy.get('@userCredential').then(user => {
-            cy.get(passwordInput)
-                .type(user.password)
-                .should ('have.value', user.password)
-        })
-    }
-    setPasswordInvalid(){
-        cy.get('@userCredential').then(user => {
-            cy.get(passwordInput)
-                .type(user.passwordInvalid)
-                .should ('have.value', user.passwordInvalid)
-        })
-    }
+    };
 
     rememberMe(){
 
-        cy.get(rememberCheckbox)
+        cy.get(this.rememberCheckbox)
             .should ('be.visible')
             .click();
     };
 
     clickLoginButton() {
-        cy.get(loginButton)
+        cy.get(this.loginButton)
             .click({force:true});
     }
 
 
-    showErrorMessage(){
-        cy.get (errorMessage)
-            .should ('be.visible')
-            .should ('contain', 'We found some errors. Please review the form and make corrections.')
-    }
     showErrorMessageNull(){
-        cy.get (errorMessageNull)
+        cy.get (this.errorMessageNull)
             .should ('be.visible')
-            .contains('eq', '');
-        cy.get (errorMessageUserName)
-            .should ('be.visible')
-            .contains('eq', 'Please enter a username');
-        cy.get (errorMessagePassword)
-            .should ('be.visible')
-            .contains('eq', 'Please enter a password');
+            .contains('We found some errors. Please review the form and make corrections.');
+        cy.contains('Please enter a username');
+        cy.contains( 'Please enter a password');
     }
 
 
