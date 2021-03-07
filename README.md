@@ -5,6 +5,11 @@ End-to-End testing for Application
    Auth:
    - Positive case - done
    - Negative cases - done
+ 
  Forget password - done
+ 
+ Creating account - blocker
+ -------
  Maybe later i doing refactor code
- Dashboard - in progress
+ 
+ 2. Dashboard - in progress
