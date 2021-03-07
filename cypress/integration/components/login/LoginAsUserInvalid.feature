@@ -3,7 +3,8 @@ Feature: Auth to Tech2B as  user
 
   Background: Open login page
     Given Open login page
-    Then  Check elements form
+    Then  Login page is opened
+    And   Check elements form
 
   Scenario: Check logged if user nothing fills
      And  Click on log in button

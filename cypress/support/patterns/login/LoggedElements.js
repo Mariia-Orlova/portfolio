@@ -6,6 +6,7 @@ beforeEach(() => {
 
 
 export class LoggedElements {
+    //Login page
    form ='#form';
    logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
    rememberCheckbox ='.custom-checkbox > label';
@@ -18,8 +19,9 @@ export class LoggedElements {
    registerBlock = '.register';
    createAnAccountLink = '//a[contains(text(),\'Create an account\')]';
    errorMessageNull = '[data-se="o-form-error-container"]';
-   errorMessageUserName ='input-container-error8';
-   errorMessagePassword = 'input-container-error9';
+   //Forget password page
+    titleForgetPassword = '.title';
+    emailForgetPassword = '#mat-input-0';
 
     openSite() {
         cy.visit('/');
@@ -93,6 +95,20 @@ export class LoggedElements {
         cy.contains( 'Please enter a password');
     }
 
+    checkElementsInForgetPassword(){
+        cy.get(this.form)
+            .should ('be.visible');
+        cy.get (this.titleForgetPassword)
+            .should ('be.visible')
+            .should ('contain' , 'Recover your password');
+        cy.get (this.emailForgetPassword)
+            .should ('be.visible')
+            .should ('be.empty');
+        cy.get (':button')
+            .should('be.visible')
+            .should('be.disabled')
+            .should ('contain', ' Reset ');
 
+    }
 }
 export const loggedElements = new LoggedElements();

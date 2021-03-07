@@ -5,3 +5,4 @@ End-to-End testing for Application
    Auth:
    - Positive case
    - Negative cases
+ Forget password

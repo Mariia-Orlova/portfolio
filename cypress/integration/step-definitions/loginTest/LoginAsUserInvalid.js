@@ -2,18 +2,14 @@ import { When,Then,And } from "cypress-cucumber-preprocessor/steps";
 import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 
 
-const usernameInput = '#okta-signin-username'; //input username
-const passwordInput = '#okta-signin-password';//input password
-
-
     When('Set username {string} invalid', (UserName)=>  {
-        cy.get(usernameInput)
+        cy.get(loggedElements.usernameInput)
             .type(UserName)
             .should('have.value', UserName);
 });
 
     And('Set password {string} invalid', (PassWord) => {
-        cy.get(passwordInput)
+        cy.get(loggedElements.passwordInput)
             .type(PassWord)
             .should('have.value', PassWord);
 });
