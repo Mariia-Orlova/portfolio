@@ -1,7 +1,7 @@
 import {When,Then,And } from "cypress-cucumber-preprocessor/steps";
-import {LoggedElements} from "../../../support/patterns/login/LoggedElements";
+import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 
-const loggedElements = new LoggedElements();
+
 
     When('Set username {string}', (email) => {
     cy.get(loggedElements.usernameInput)
@@ -17,13 +17,13 @@ const loggedElements = new LoggedElements();
     });
 
     And('Check Remember Me', () => {
-        loggedElements
-            .rememberMe();
+        cy.get(loggedElements.rememberCheckbox)
+            .click({force:true});
 });
 
     And('Click on log in button', () => {
-    loggedElements
-        .clickLoginButton();
+    cy.get(loggedElements.loginButton)
+        .click({force:true});
 
 });
 

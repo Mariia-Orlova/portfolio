@@ -16,5 +16,28 @@ Then('Login page is opened', () => {
 
 And('Check elements form', () => {
     loggedElements
-        .checkElementsInForm();
+        .checkForm();
+    cy.contains('Login to your account');
+    loggedElements
+        .checkLogo();
+    loggedElements
+        .userNameLabelDisplay();
+    loggedElements
+        .passwordLabelDisplay();
+    loggedElements
+        .userNameInput();
+    loggedElements
+        .passWordInput();
+    loggedElements
+        .rememberMeCheckbox();
+    loggedElements
+        .rememberMeLabelTitle();
+    loggedElements
+        .logInButton();
+    loggedElements
+        .forgetPasswordLink();
+    loggedElements
+        .createAccountLink();
+    loggedElements
+        .dontHaveAnAccount();
 });

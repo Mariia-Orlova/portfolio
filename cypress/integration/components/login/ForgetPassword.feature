@@ -11,11 +11,10 @@ Feature: Check Forget password function
       And Check elements in forget password page
 
       Scenario: Check Forget password function
+        When Click on Forget password
+        Then Forget password page is opened
         When Fill email 'techb2bdemochalkostechnology@gmail.com'
+        And Click on Reset button
         Then  Message was sent to mailbox
-
-
-        Scenario: Check Forget password (negative scenarios)
-
 
 
