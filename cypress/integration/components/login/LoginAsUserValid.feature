@@ -3,7 +3,8 @@ Feature: Auth to Tech2B as  user
 
   Background: Check elements for Login page
     Given Open login page
-    Then  Check elements form
+    Then  Login page is opened
+    And   Check elements form
 
 
   Scenario: Check auth to Tech2B as user using valid value
