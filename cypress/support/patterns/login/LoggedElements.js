@@ -8,83 +8,99 @@ beforeEach(() => {
 export class LoggedElements {
     //Login page
    form ='#form';
-   logo = '//body/t2b-app[1]/t2b-layout[1]/div[1]/div[1]/div[1]/div[1]/t2b-content[1]/t2b-login[1]/div[1]/div[1]/div[1]/div[1]/img[1]';
-   rememberCheckbox ='.custom-checkbox > label';
+   rememberCheckbox ='[name=\'remember\']';
+   rememberMeLabel = '[data-se-for-name="remember"]';
    userNameLabel = '//label[contains(text(),\'Username\')]';
    passwordLabel = '//label[contains(text(),"Password")]';
    usernameInput = '#okta-signin-username'; //input username
    passwordInput = '#okta-signin-password';//input password
    loginButton = '#okta-signin-submit';//Log in button
    forgetPassword = '.forgot-password';
-   registerBlock = '.register';
    createAnAccountLink = '//a[contains(text(),\'Create an account\')]';
    errorMessageNull = '[data-se="o-form-error-container"]';
    //Forget password page
     titleForgetPassword = '.title';
     emailForgetPassword = '#mat-input-0';
+    link = '.link';
+    forgetPasswordButtonResetElement =':button';
 
     openSite() {
         cy.visit('/');
 
     };
 
-    checkElementsInForm(){
+    checkForm() {
         cy.get(this.form)
-             .should ('be.visible');
+            .should('be.visible');
+    };
 
-        cy.contains('Login to your account');
-
-        cy.xpath(this.logo)
+    checkLogo(){
+        cy.get('img')
             .should ('be.visible')
             .should ('have.attr', 'src', 'assets/images/logos/t2b-logo-text.svg');
+    };
 
+    userNameLabelDisplay() {
         cy.xpath(this.userNameLabel)
-            .should( 'be.visible')
-            .should ('contain', 'Username');
+            .should('be.visible')
+            .should('contain', 'Username');
+    };
 
+    passwordLabelDisplay() {
         cy.xpath(this.passwordLabel)
-            .should( 'be.visible')
-            .should ('contain', 'Password');
+            .should('be.visible')
+            .should('contain', 'Password');
+    };
 
+    userNameInput() {
         cy.get(this.usernameInput)
-            .should ('be.visible')
-            .should ('be.empty');
+            .should('be.visible')
+            .should('be.empty');
+    };
 
-        cy.get (this.passwordInput)
-            .should ('be.visible')
-            .should ('be.empty');
+    passWordInput() {
+        cy.get(this.passwordInput)
+            .should('be.visible')
+            .should('be.empty');
+    };
 
-        cy.get (this.rememberCheckbox)
-            .should ('be.visible');
+    rememberMeCheckbox() {
+        cy.get(this.rememberCheckbox)
+            .uncheck();
+    };
 
-        cy.get (this.loginButton)
-            .should ('be.visible');
+    rememberMeLabelTitle(){
+        cy.get(this.rememberMeLabel)
+            .should('be.visible')
+            .should ('contain', 'Remember me')
 
-        cy.get (this.forgetPassword)
-            .should ('be.visible')
-            .should ('contain', ' Forgot Password ')
-            .should ('have.attr','href', '/reset-password');
+    }
 
-        cy.get (this.registerBlock)
-            .should ('be.visible')
-            .should ('contain', 'Don\'t have an account?')
-            .should ('contain', 'Create an account');
+    logInButton() {
+        cy.get(this.loginButton)
+            .should('be.visible')
+            .should('be.not.disabled')
+            .should('contain', 'Sign In');
+    };
+
+    forgetPasswordLink() {
+        cy.get(this.forgetPassword)
+            .should('be.visible')
+            .should('contain', ' Forgot Password ')
+            .should('have.attr', 'href', '/reset-password');
+    };
+
+    createAccountLink(){
          cy.xpath (this.createAnAccountLink)
+            .should ('contain', 'Create an account')
             .should ('have.attr','href', '/signup');
 
     };
 
-    rememberMe(){
+    dontHaveAnAccount() {
+        cy.contains('Don\'t have an account?')
 
-        cy.get(this.rememberCheckbox)
-            .should ('be.visible')
-            .click();
     };
-
-    clickLoginButton() {
-        cy.get(this.loginButton)
-            .click({force:true});
-    }
 
 
     showErrorMessageNull(){
@@ -95,19 +111,35 @@ export class LoggedElements {
         cy.contains( 'Please enter a password');
     }
 
-    checkElementsInForgetPassword(){
-        cy.get(this.form)
-            .should ('be.visible');
-        cy.get (this.titleForgetPassword)
-            .should ('be.visible')
-            .should ('contain' , 'Recover your password');
-        cy.get (this.emailForgetPassword)
-            .should ('be.visible')
-            .should ('be.empty');
-        cy.get (':button')
+
+// Forget Password page
+
+    titleForgetPasswordLabel(){
+        cy.get(this.titleForgetPassword)
+            .should('be.visible')
+            .should('contain', 'Recover your password');
+
+    };
+
+    inputEmailForgetPassword(){
+        cy.get(this.emailForgetPassword)
+            .should('be.visible')
+            .should('be.empty');
+
+    };
+
+    forgetPasswordButtonReset(){
+        cy.get(this.forgetPasswordButtonResetElement)
             .should('be.visible')
             .should('be.disabled')
-            .should ('contain', ' Reset ');
+            .should('contain', ' Reset ');
+    };
+
+    goBackToLoginLink(){
+        cy.get (this.link)
+            .should ('be.visible')
+            .should ('contain' , ' Go back to login ')
+            .should ('have.attr','href', '/login');
 
     }
 }
