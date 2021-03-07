@@ -3,6 +3,8 @@ End-to-End testing for Application
 
 1. Login page
    Auth:
-   - Positive case
-   - Negative cases
- Forget password
+   - Positive case - done
+   - Negative cases - done
+ Forget password - done
+ Maybe later i doing refactor code
+ Dashboard - in progress
