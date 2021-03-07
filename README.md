@@ -8,6 +8,8 @@ End-to-End testing for Application
  
  Forget password - done
  
+ Creating account - blocker
+ -------
  Maybe later i doing refactor code
  
  2. Dashboard - in progress
