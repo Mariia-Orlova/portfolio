@@ -1,6 +1,6 @@
 {
   "baseUrl": "https://test.tech2b.cc/",
-
+  "projectId": "wb3trw",
   "ignoreTestFiles": "*.js",
   "pluginsFile": "cypress/plugins/index.js",
   "supportFile": "cypress/support/index.js",
@@ -9,7 +9,6 @@
   "trashAssetsBeforeRuns": true,
   "video": false,
   "screenshotsFolder": "cypress/screenshots",
-  "reporter": "mochawesome",
   "testFiles": "**/*.feature",
   "failOnStatusCode": false,
   "reporterOptions": {
