@@ -10,17 +10,15 @@ export class LoggedElements {
    form ='#form';
    rememberCheckbox ='[name=\'remember\']';
    rememberMeLabel = '[data-se-for-name="remember"]';
-   userNameLabel = '//label[contains(text(),\'Username\')]';
-   passwordLabel = '//label[contains(text(),"Password")]';
    usernameInput = '#okta-signin-username'; //input username
    passwordInput = '#okta-signin-password';//input password
    loginButton = '#okta-signin-submit';//Log in button
-   forgetPassword = '.forgot-password';
+   fillInput = 'input';
    createAnAccountLink = '//a[contains(text(),\'Create an account\')]';
    errorMessageNull = '[data-se="o-form-error-container"]';
    //Forget password page
     titleForgetPassword = '.title';
-    emailForgetPassword = '#mat-input-0';
+    clickForgetPasswordLink ='.forgot-password';
     link = '.link';
     forgetPasswordButtonResetElement =':button';
 
@@ -41,15 +39,14 @@ export class LoggedElements {
     };
 
     userNameLabelDisplay() {
-        cy.xpath(this.userNameLabel)
-            .should('be.visible')
-            .should('contain', 'Username');
+        cy.contains('Username ')
+            .should('be.visible');
+
     };
 
     passwordLabelDisplay() {
-        cy.xpath(this.passwordLabel)
-            .should('be.visible')
-            .should('contain', 'Password');
+        cy.contains('Password ')
+            .should('be.visible');
     };
 
     userNameInput() {
@@ -84,7 +81,7 @@ export class LoggedElements {
     };
 
     forgetPasswordLink() {
-        cy.get(this.forgetPassword)
+        cy.get(this.clickForgetPasswordLink)
             .should('be.visible')
             .should('contain', ' Forgot Password ')
             .should('have.attr', 'href', '/reset-password');
@@ -115,14 +112,14 @@ export class LoggedElements {
 // Forget Password page
 
     titleForgetPasswordLabel(){
-        cy.get(this.titleForgetPassword)
+        cy.contains('Recover your password')
             .should('be.visible')
             .should('contain', 'Recover your password');
 
     };
 
     inputEmailForgetPassword(){
-        cy.get(this.emailForgetPassword)
+        cy.get(this.fillInput)
             .should('be.visible')
             .should('be.empty');
 

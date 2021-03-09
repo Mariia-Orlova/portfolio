@@ -4,8 +4,8 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 
 
 When('Click on Forget password', () => {
-    cy.get(loggedElements.forgetPassword)
-        .click();
+    cy.get(loggedElements.clickForgetPasswordLink)
+        .click({force:true});
 });
 
 Then('Forget password page is opened', () => {
@@ -32,7 +32,7 @@ And('Check elements in forget password page', () => {
 });
 
 When('Fill email {string}', (email) => {
-    cy.get(loggedElements.emailForgetPassword)
+    cy.get(loggedElements.fillInput)
         .type(email)
         .should('have.value', email);
 });
@@ -45,21 +45,20 @@ And('Click on Reset button', () => {
 And('Message was sent to mailbox', () => {
     cy.get (loggedElements.form)
         .find(loggedElements.titleForgetPassword);
-    cy.get ('.form-sent')
-        .should ('contain', 'An email has been sent to techb2bdemochalkostechnology@gmail.com With instructions on how to reset your password');
+        cy.contains ('An email has been sent to techb2bdemochalkostechnology@gmail.com With instructions on how to reset your password');
     loggedElements
         .goBackToLoginLink();
 });
 
 And('Clear email field', () => {
-    cy.get(loggedElements.emailForgetPassword)
+    cy.get(loggedElements.fillInput)
         .clear()
         .should ('be.empty');
 });
 
 
 When('Set email {string}', (EmailForForget) => {
-    cy.get(loggedElements.emailForgetPassword)
+    cy.get(loggedElements.fillInput)
         .type(EmailForForget)
         .should('have.value', EmailForForget);
 });
