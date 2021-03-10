@@ -16,4 +16,4 @@ End-to-End testing for Application
     
     -  main menu
     - elements on Supple and Demand page
-    - create new supple
+    - create new supple on Supple and Demand page
