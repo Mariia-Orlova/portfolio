@@ -12,4 +12,8 @@ End-to-End testing for Application
  -------
  Maybe later i doing refactor code
  
- 2. Dashboard - in progress
+ 2. Supple and Demand page - in progress
+    
+    -  main menu
+    - elements on Supple and Demand page
+    - create new supple
