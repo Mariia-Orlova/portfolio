@@ -1,6 +1,6 @@
 # E2E-App
 End-to-End testing for Application
-
+cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
 1. Login page
    Auth:
    - Positive case - done

@@ -14,5 +14,3 @@ Feature: Open Supple and Demand page
     Scenario: Check elements for Supple and Demand page
       When Open Supple and Demand page
       Then Supple and Demand page is opened
-      And Check display filters
-      And Check display Supple and Demand table
