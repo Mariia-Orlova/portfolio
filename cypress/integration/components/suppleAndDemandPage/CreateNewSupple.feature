@@ -17,3 +17,5 @@ Background: Check elements for Login page
   Scenario: Create new supple
     When Click on Create button in Supple in Supple and Demand page
     Then Create Request for Quotation page is opened
+    When Select Supple radiobutton
+
