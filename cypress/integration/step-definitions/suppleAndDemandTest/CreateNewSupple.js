@@ -9,8 +9,8 @@ When('Click on Create button in Supple in Supple and Demand page', () => {
 });
 
 Then('Create Request for Quotation page is opened', () => {
-    cy.url()
-        .should('include', '/create/request');
+    cy.url({timeout:4090})
+        .should('include', '/create/request',);
     cy.title()
         .should('eq', 'TECH2B - Create Request');
     suppleDemandElements
@@ -103,19 +103,19 @@ And('Fill fields for General tab: Description,Contact,Contact preferences,Delive
         .should('contain', 'Delivery date*');
 
     cy.get(suppleDemandElements.deliveryDateValue)
-        .should('have.value', '04/04/2021')
+        .should('have.value', '06/04/2021')
         .clear({force:true})
-        .type('04/04/2021')
-        .should('have.value', '04/04/2021');
+        .type('06/04/2021')
+        .should('have.value', '06/04/2021');
 
     cy.contains('Quotation deadline *')
         .should('contain', 'Quotation deadline *');
 
     cy.get(suppleDemandElements.quotationDeadline)
-        .should('have.value', '28/03/2021')
+        .should('have.value', '30/03/2021')
         .clear({force:true})
-        .type('28/03/2021')
-        .should('have.value', '28/03/2021');
+        .type('30/03/2021')
+        .should('have.value', '30/03/2021');
 
     cy.contains('Delivery condition')
         .should('contain', 'Delivery condition');
@@ -126,6 +126,52 @@ And('Fill fields for General tab: Description,Contact,Contact preferences,Delive
 And('Fill data for Expertise tab', () => {
     suppleDemandElements
         .expertiseLabelText();
+    suppleDemandElements
+        .selectCategoryText();
+    suppleDemandElements
+        .selectCategoryEngineering();
+    suppleDemandElements
+        .selectCategoryTechnologies();
+    suppleDemandElements
+        .selectCategoryElectricalEngineering();
+    suppleDemandElements
+        .selectCategoryTransport();
+    suppleDemandElements
+        .selectCategorySoftware();
+    suppleDemandElements
+        .selectCategoryOthers();
+    suppleDemandElements
+        .selectCategoryArticles();
+    suppleDemandElements
+        .selectCategorySurfaceTreatment();
+
+    cy.xpath(suppleDemandElements.categoryEngineering)
+        .click({force:true});
+    cy.contains ('Advice')
+        .should ('contain', 'Advice')
+        .click({force:true});
+    cy.contains ('Calculation')
+        .should ('contain' , 'Calculation')
+        .click({force:true});
+    cy.contains ('Hydraulic engineering')
+        .should('contain' , 'Hydraulic engineering')
+        .click({force:true});
+    cy.contains ('Mechanical engineering')
+        .should ('contain', 'Mechanical engineering')
+        .click({force:true});
+    cy.contains ('Pneumatic engineering')
+        .should ('contain', 'Pneumatic engineering')
+        .click({force:true});
+    cy.contains ('Technical parts')
+        .should ('contain' , 'Technical parts')
+        .click({force:true});
+    cy.contains (' Others')
+        .should ('contain', ' Others')
+        .click({force:true});
+    cy.contains (' Construction')
+        .should ('contain', ' Construction')
+        .click({force:true});
+
 
 
 });
@@ -134,6 +180,36 @@ And('Fill data for Expertise tab', () => {
 And('Fill data for Products tab', () => {
     suppleDemandElements
         .productTab();
+    cy.xpath('//h4[contains(text(),\'Add your product files relevant to your request\')]')
+        .should('contain', 'Add your product files relevant to your request');
+    cy.xpath ('//p[contains(text(),\'Select 1 of the 3 options to add products below\')]')
+        .should ('contain' ,'Select 1 of the 3 options to add products below');
+    //Manual button
+    cy.xpath ('//h3[contains(text(),\'Manually\')]')
+        .should ('contain', 'Manually')
+        .click({force:true});
+
+    cy.get ('[data-cy=add-product]')
+        .find('.mat-button-wrapper')
+        .should ('contain', ' Add product ')
+        .click({force:true});
+
+    cy.get ('[data-cy="add-new-product"]')
+        .should ('contain', 'Add new product');
+    cy.get ('[data-cy="add-existing-product"]')
+        .should ('contain', 'Add existing product');
+
+    // Generate
+    cy.xpath('//h3[contains(text(),\'Generate\')]')
+        .should ('contain', 'Generate');
+
+
+    //No Products
+
+    cy.xpath ('//h3[contains(text(),\'No Products\')]')
+        .should ('contain', 'No Products');
+
+
 
 });
 
