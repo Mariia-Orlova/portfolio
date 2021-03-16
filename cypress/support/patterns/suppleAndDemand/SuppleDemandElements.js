@@ -39,6 +39,15 @@ export class SuppleDemandElements {
     quotationDeadline ='[data-cy="closure-date-input"]';
     // Expertise tab
     expertiseLabel = '//h1[contains(text(),\'Expertise\')]';
+    selectCategory = '//h4[contains(text(),\'Please select the categories below that apply to y\')]';
+    categoryEngineering = '//mat-chip[contains(text(),\'Engineering\')]';
+    categoryTechnologies = '//mat-chip[contains(text(),\'Technologies\')]';
+    categoryElectricalEngineering = '//mat-chip[contains(text(),\'Electrical engineering\')]';
+    categoryTransport = '//mat-chip[contains(text(),\'Transport\')]';
+    categorySoftware ='//mat-chip[contains(text(),\'Software\')]';
+    categoryOthers = '//mat-chip[contains(text(),\'Others\')]';
+    categoryArticles = '//mat-chip[contains(text(),\'Articles\')]';
+    categorySurfaceTreatment = '//mat-chip[contains(text(),\'Surface treatment\')]';
 
     //Product tab
     productTabLabel ='//h1[contains(text(),\'Products\')]';
@@ -232,5 +241,55 @@ export class SuppleDemandElements {
         cy.xpath(this.matchmakerLabel)
             .should ('contain' , 'Matchmaker');
     }
+
+// Engineer block
+    selectCategoryText(){
+        cy.xpath(this.selectCategory)
+            .should ('contain' , 'Please select the categories below that apply to your application');
+    }
+
+    selectCategoryEngineering(){
+        cy.xpath(this.categoryEngineering)
+            .should ('contain' , ' Engineering');
+    }
+
+    selectCategoryTechnologies(){
+        cy.xpath(this.categoryTechnologies)
+            .should ('contain' , ' Technologies');
+    }
+
+    selectCategoryElectricalEngineering(){
+        cy.xpath(this.categoryElectricalEngineering)
+            .should ('contain' , ' Electrical engineering');
+    }
+
+    selectCategoryTransport(){
+        cy.xpath(this.categoryTransport)
+            .should ('contain' , ' Transport');
+    }
+
+    selectCategorySoftware(){
+        cy.xpath(this.categorySoftware)
+            .should ('contain' , ' Software');
+    }
+
+    selectCategoryOthers(){
+        cy.xpath(this.categoryOthers)
+            .should ('contain' , ' Others');
+    }
+
+
+    selectCategoryArticles(){
+        cy.xpath(this.categoryArticles)
+            .should ('contain' , ' Articles');
+    }
+
+    selectCategorySurfaceTreatment(){
+        cy.xpath(this.categorySurfaceTreatment)
+            .should ('contain' , ' Surface treatment');
+    }
+
+
+
 }
 export const suppleDemandElements = new SuppleDemandElements();
