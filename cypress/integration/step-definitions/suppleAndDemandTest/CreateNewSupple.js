@@ -103,19 +103,19 @@ And('Fill fields for General tab: Description,Contact,Contact preferences,Delive
         .should('contain', 'Delivery date*');
 
     cy.get(suppleDemandElements.deliveryDateValue)
-        .should('have.value', '06/04/2021')
-        .clear({force:true})
-        .type('06/04/2021')
-        .should('have.value', '06/04/2021');
+        .should('not.have.value', '');
+        //.clear({force:true})
+        //.type('06/04/2021')
+        //.should('have.value', '06/04/2021');
 
     cy.contains('Quotation deadline *')
         .should('contain', 'Quotation deadline *');
 
     cy.get(suppleDemandElements.quotationDeadline)
-        .should('have.value', '30/03/2021')
-        .clear({force:true})
-        .type('30/03/2021')
-        .should('have.value', '30/03/2021');
+        .should('not.have.value', '');
+        //.clear({force:true})
+        //.type('30/03/2021')
+        //.should('have.value', '30/03/2021');
 
     cy.contains('Delivery condition')
         .should('contain', 'Delivery condition');
@@ -178,6 +178,7 @@ And('Fill data for Expertise tab', () => {
 
 
 And('Fill data for Products tab', () => {
+    //Check product tab
     suppleDemandElements
         .productTab();
     cy.xpath('//h4[contains(text(),\'Add your product files relevant to your request\')]')
@@ -185,19 +186,48 @@ And('Fill data for Products tab', () => {
     cy.xpath ('//p[contains(text(),\'Select 1 of the 3 options to add products below\')]')
         .should ('contain' ,'Select 1 of the 3 options to add products below');
     //Manual button
-    cy.xpath ('//h3[contains(text(),\'Manually\')]')
+    cy.xpath ('//h3[contains(text(),\'Manually\')]').scrollIntoView()
         .should ('contain', 'Manually')
         .click({force:true});
-
+    //Click on
     cy.get ('[data-cy=add-product]')
         .find('.mat-button-wrapper')
         .should ('contain', ' Add product ')
         .click({force:true});
 
+    //Check on elements
     cy.get ('[data-cy="add-new-product"]')
-        .should ('contain', 'Add new product');
-    cy.get ('[data-cy="add-existing-product"]')
-        .should ('contain', 'Add existing product');
+        .should ('contain', 'Add new product')
+        .click({force:true});
+
+
+
+    //cy.get ('[data-cy="add-existing-product"]')
+      //  .should ('contain', 'Add existing product');
+
+   //Title input
+    cy.contains ('Title')
+        .should ('contain', 'Title');
+    cy.get ('[data-cy="title-input"]')
+        .should ('be.visible')
+        .and ('be.empty')
+        .type ('New product',{force:true})
+        .should ('have.value', 'New product');
+
+    //Quantity field
+        cy.contains ('Quantity')
+            .should ('contain', 'Quantity');
+
+        cy.get ('[data-cy="quantity-input"]')
+            .should ('be.visible')
+            .and ('be.empty')
+            .type ('2')
+            .should ('have.value', '2');
+
+    //Product field
+    cy.contains ('Product number')
+        .should ('contain', 'Product number');
+        //??? input
 
     // Generate
     cy.xpath('//h3[contains(text(),\'Generate\')]')
