@@ -9,7 +9,7 @@ When('Click on Create button in Supple in Supple and Demand page', () => {
 });
 
 Then('Create Request for Quotation page is opened', () => {
-    cy.url({timeout:4090})
+    cy.url({timeout:5000})
         .should('include', '/create/request',);
     cy.title()
         .should('eq', 'TECH2B - Create Request');
@@ -209,8 +209,7 @@ And('Fill data for Products tab', () => {
     cy.contains ('Title')
         .should ('contain', 'Title');
     cy.get ('[data-cy="title-input"]')
-        .should ('be.visible')
-        .and ('be.empty')
+        .should ('be.empty')
         .type ('New product',{force:true})
         .should ('have.value', 'New product');
 
@@ -219,25 +218,65 @@ And('Fill data for Products tab', () => {
             .should ('contain', 'Quantity');
 
         cy.get ('[data-cy="quantity-input"]')
-            .should ('be.visible')
-            .and ('be.empty')
-            .type ('2')
+            .should ('be.empty')
+            .type ('2',{force:true})
             .should ('have.value', '2');
 
     //Product field
     cy.contains ('Product number')
         .should ('contain', 'Product number');
-        //??? input
+
+    cy.get ('#mat-input-9')
+        .should ('be.empty')
+        .type ('2',{force:true})
+        .should ('have.value', '2');
+
+    //Length field
+    cy.contains ('Length')
+        .should ('contain', 'Length');
+    cy.get ('#mat-input-10')
+        .should ('be.empty')
+        .type ('2',{force:true})
+        .should ('have.value', '2');
+
+    //Width field
+    cy.contains ('Width')
+        .should ('contain', 'Width');
+    cy.get ('#mat-input-11')
+        .should ('be.empty')
+        .type ('2',{force:true})
+        .should ('have.value', '2');
+
+    //Height field
+    cy.contains ('Height')
+        .should ('contain', 'Height');
+    cy.get ('#mat-input-12')
+        .should ('be.empty')
+        .type ('2',{force:true})
+        .should ('have.value', '2');
+
+    //Material
+    cy.contains ('Material')
+        .should ('contain', 'Material');
+    suppleDemandElements
+        .selectMaterial();
+
+    //Description product
+    cy.get(suppleDemandElements.inputTextDescription)
+        .eq(1)
+        .type('Description for product',{force:true})
+        .should('have.value', '');
+
 
     // Generate
-    cy.xpath('//h3[contains(text(),\'Generate\')]')
-        .should ('contain', 'Generate');
+    //cy.xpath('//h3[contains(text(),\'Generate\')]')
+       // .should ('contain', 'Generate');
 
 
     //No Products
 
-    cy.xpath ('//h3[contains(text(),\'No Products\')]')
-        .should ('contain', 'No Products');
+   // cy.xpath ('//h3[contains(text(),\'No Products\')]')
+    //    .should ('contain', 'No Products');
 
 
 

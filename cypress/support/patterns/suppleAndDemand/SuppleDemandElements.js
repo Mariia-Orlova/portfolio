@@ -195,6 +195,35 @@ export class SuppleDemandElements {
             .and ('contain' , ' Others')
     }
 
+    selectMaterial(){
+        cy.get('mat-select[id="mat-select-7"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' Aluminium ')
+            .and ('contain', ' Brass ')
+
+    }
+
+    /*selectDeliveryCondition(){
+        cy.get('mat-select[formcontrolname="deliveryCondition"]')
+            .click({force:true});
+            cy.get('mat-option')
+            .should (($lis) =>{
+            expect ($lis).to.have.length(15)
+            expect( $lis.eq(0)).to.contain (' Cost and freight')
+                expect( $lis.eq(1)).to.contain (' Cost insurance and freight')
+                expect( $lis.eq(2)).to.contain (' Carriage and insurance paid to')
+                expect( $lis.eq(3)).to.contain (' Carriage paid to')
+                expect( $lis.eq(4)).to.contain ( ' Delivered at place')
+                expect( $lis.eq(5)).to.contain (' Delivered at terminal')
+                expect( $lis.eq(6)).to.contain (' Delivered duty paid')
+                expect( $lis.eq(7)).to.contain ( ' Ex works')
+                expect( $lis.eq(8)).to.contain ( ' Free alongside ship')
+                expect( $lis.eq(9)).to.contain ( ' Free carrier')
+                expect( $lis.eq(10)).to.contain (' Free on board')
+                expect( $lis.eq(11)).to.contain ( ' Others')
+    })}*/
+
     contactPreferences(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
             .click({force:true});
