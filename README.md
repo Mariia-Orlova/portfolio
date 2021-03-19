@@ -15,7 +15,7 @@ cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
  
  2. Supple and Demand page 
     
-    -Product block
+    -Product block - in progress
     
     -Publication block
     
