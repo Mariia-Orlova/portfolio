@@ -177,7 +177,7 @@ And('Fill data for Expertise tab', () => {
 });
 
 
-And('Fill data for Products tab', () => {
+And('Fill Manually data for Products tab', () => {
     //Check product tab
     suppleDemandElements
         .productTab();
@@ -196,14 +196,28 @@ And('Fill data for Products tab', () => {
         .click({force:true});
 
     //Check on elements
+    cy.get ('[data-cy="add-existing-product"]')
+        .should ('contain', 'Add existing product');
+
     cy.get ('[data-cy="add-new-product"]')
         .should ('contain', 'Add new product')
         .click({force:true});
 
 
 
-    //cy.get ('[data-cy="add-existing-product"]')
-      //  .should ('contain', 'Add existing product');
+    // Add file
+    cy.get ('.create-button')
+        .should('contain', ' Add file ')
+        .click({force:true});
+   // cy.get ('[class="mat-menu-content"]')
+     //   .should('be.visible');
+
+   // cy.contains ('Add new documents')
+      //  .should('contain', 'Add existing documents');
+
+    //cy.contains ('Add existing documents')
+      //  .should('contain', 'Add existing documents')
+      //  .click({force:true});
 
    //Title input
     cy.contains ('Title')
@@ -266,11 +280,6 @@ And('Fill data for Products tab', () => {
         .eq(1)
         .type('Description for product',{force:true})
         .should('have.value', '');
-
-
-    // Generate
-    //cy.xpath('//h3[contains(text(),\'Generate\')]')
-       // .should ('contain', 'Generate');
 
 
     //No Products

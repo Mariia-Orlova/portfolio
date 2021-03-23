@@ -198,6 +198,8 @@ export class SuppleDemandElements {
             .and ('contain' , ' Others')
     }
 
+
+
     selectMaterial(){
         cy.get('[class="mat-select-value"]')
             .eq(3)
@@ -213,9 +215,8 @@ export class SuppleDemandElements {
     }
 
     selectTenderArea(){
-        cy.get('[class="mat-select-value"]')
-            .eq(4)
-            .xpath('//span[contains(text(),\'Belgium, England, Germany, Ireland, The Netherland\')]')
+        cy.xpath('//span[contains(text(),\'Belgium, England, Germany, Ireland, The Netherland\')]')
+
             .should('contain', 'Belgium, England, Germany, Ireland, The Netherlands, Northern Ireland, Scotland, Wales')
 
     }
