@@ -14,7 +14,7 @@ Background: Check elements for Login page
   Then Supple and Demand page is opened
 
 
-  Scenario Outline: Create new supple
+  Scenario Outline: Create new supple with Products-Manually
     When Click on Create button in Supple in Supple and Demand page
     Then Create Request for Quotation page is opened
     When Select Supple radiobutton
@@ -23,7 +23,7 @@ Background: Check elements for Login page
     And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
     And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
     And Fill data for Expertise tab
-    And Fill data for Products tab
+    And Fill Manually data for Products tab
     And Fill data for Publication tab
     And Fill Matchmaker tab
 

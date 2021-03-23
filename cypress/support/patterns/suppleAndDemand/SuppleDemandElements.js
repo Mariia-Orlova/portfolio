@@ -54,6 +54,9 @@ export class SuppleDemandElements {
 
     //Publication
     publicationLabel = '//h1[contains(text(),\'Publication\')]';
+    selectNetherlands ='[data-cy="tender-area-chiplist"]';
+    clickOnInviteButton ='[data-cy="invite-button"]';
+
 
     //Matchmaker
     matchmakerLabel = '//h1[contains(text(),\'Matchmaker\')]';
@@ -195,14 +198,29 @@ export class SuppleDemandElements {
             .and ('contain' , ' Others')
     }
 
+
+
     selectMaterial(){
-        cy.get('mat-select[id="mat-select-7"]')
+        cy.get('[class="mat-select-value"]')
+            .eq(3)
             .click({force:true});
         cy.get('mat-option')
             .should('contain',' Aluminium ')
             .and ('contain', ' Brass ')
+            .and ('contain', ' Copper ')
+            .and ('contain', ' Stainless steel ')
+            .and ('contain', ' Wrought iron ')
+            .and ('contain', ' Others ')
 
     }
+
+    selectTenderArea(){
+        cy.xpath('//span[contains(text(),\'Belgium, England, Germany, Ireland, The Netherland\')]')
+
+            .should('contain', 'Belgium, England, Germany, Ireland, The Netherlands, Northern Ireland, Scotland, Wales')
+
+    }
+
 
     /*selectDeliveryCondition(){
         cy.get('mat-select[formcontrolname="deliveryCondition"]')
@@ -223,6 +241,23 @@ export class SuppleDemandElements {
                 expect( $lis.eq(10)).to.contain (' Free on board')
                 expect( $lis.eq(11)).to.contain ( ' Others')
     })}*/
+
+
+    selectNetherlandsTab(){
+    cy.get (this.selectNetherlands)
+    .should (($lis) =>{
+    expect ($lis).to.have.length(8)
+    expect( $lis.eq(0)).to.contain (' The Netherlands ')
+    expect( $lis.eq(1)).to.contain (' England ')
+    expect( $lis.eq(2)).to.contain (' Germany ')
+    expect( $lis.eq(3)).to.contain (' Belgium ')
+    expect( $lis.eq(4)).to.contain ( ' Ireland ')
+    expect( $lis.eq(5)).to.contain (' Northern Ireland ')
+    expect( $lis.eq(6)).to.contain (' Scotland ')
+    expect( $lis.eq(7)).to.contain ( ' Wales ')
+
+})}
+
 
     contactPreferences(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
