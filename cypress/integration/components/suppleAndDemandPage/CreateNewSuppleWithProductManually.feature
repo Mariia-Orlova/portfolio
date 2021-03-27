@@ -26,7 +26,7 @@ Background: Check elements for Login page
     And Fill Manually data for Products tab
     And Fill data for Publication tab
     And Fill Matchmaker tab
-
+    And Click on Create button
 
     Examples:
 
