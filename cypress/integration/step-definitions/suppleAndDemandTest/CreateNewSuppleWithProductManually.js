@@ -366,4 +366,9 @@ And('Fill Matchmaker tab', () => {
         .matchmakerTab();
     cy.get('[class="p-24 pb-12 matchmaker-company-list"]')
         .should('be.visible');
+})
+
+And('Click on Create button', () => {
+    cy.get('class="verify-create-request-button mat-raised-button mat-button-base mat-accent"')
+        .click({force:true});
 });
