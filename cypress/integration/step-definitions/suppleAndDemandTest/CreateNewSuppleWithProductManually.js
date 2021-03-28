@@ -281,14 +281,6 @@ And('Fill Manually data for Products tab', () => {
         .type('Description for product',{force:true})
         .should('have.value', '');
 
-
-    //No Products
-
-   // cy.xpath ('//h3[contains(text(),\'No Products\')]')
-    //    .should ('contain', 'No Products');
-
-
-
 });
 
 And('Fill data for Publication tab', () => {

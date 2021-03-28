@@ -18,7 +18,7 @@ export class SuppleDemandElements {
     // Title field
     inputTitleText = '[data-cy="title"]';
     titlePlaceholder= '[placeholder="Title"]';
-    titleLabel = '//h4[contains(text(),\'Title *\')]';
+    titleLabel = '//h4[contains(text(),\'Title*\')]';
     //Internal ID
     inputInternalProjectNumberText ='[data-cy="internalProjectNumber"]';
     internalIdLabel = '//h4[contains(text(),\'Internal ID\')]';
@@ -124,7 +124,7 @@ export class SuppleDemandElements {
 
     titleLabelText(){
         cy.xpath(this.titleLabel)
-            .should ('contain' , 'Title *');
+            .should ('contain' , 'Title*');
     }
 
     internalProjectNumberValue(){
