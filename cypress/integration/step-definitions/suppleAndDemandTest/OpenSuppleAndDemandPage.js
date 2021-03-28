@@ -10,7 +10,7 @@ When('Open Supple and Demand page', () => {
 
 
 Then('Supple and Demand page is opened', () => {
-    cy.url()
+    cy.url({timeout:5000})
         .should('include', '/supply-demand');
     cy.title()
         .should('eq', 'TECH2B - Supply & Demand List');

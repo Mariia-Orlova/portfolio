@@ -20,6 +20,9 @@ cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
     -Publication block -done
     
     
-     -Product block general - in progress
+     -Product block general - done
      
-      -Product block no product -in progress
+      -Product block no product -done
+      
+      
+ Create new demand - in progress
