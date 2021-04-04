@@ -18,7 +18,6 @@ And('Fill Generate data for Products tab', () => {
 
     cy.get ('[data-cy="cancel-add-files-to-create-product"]')
         .should('contain', ' Add products ')
-        .and ('be.unchecked')
         .click ({force:true});
 
     cy.get ('[class="mat-checkbox-layout"]').eq(0)

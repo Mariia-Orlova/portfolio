@@ -10,7 +10,7 @@ export class SuppleDemandElements {
     generalLabel='//h1[contains(text(),\'General\')]';
     suppleOrDemandLabel = '//h2[contains(text(),\'Supply or Demand\')]';
     doYouWantToOutsource = '//h4[contains(text(),\'Do you want to outsource work or do you have an of\')]';
-    selectMatRadioButtonTrue = '[ng-reflect-checked="true"]';
+    selectMatRadioButtonTrue = 'mat-radio-button';
     //Supple Block
     supplySelection ='.supply-selection';
     suppleTextInBlock = '.supply-selection > .p-12 > .w-100-p > .m-0';
@@ -29,7 +29,7 @@ export class SuppleDemandElements {
     maximumNumberPlaceholder ='[placeholder="Internal ID"]';
     //Description
     inputTextDescription ='[class="nw-editor__res"]';
-    descriptionLabel ='//h4[contains(text(),\'Description*\')]';
+    descriptionLabel ='//h4[contains(text(),\'Description\')]';
     descriptionPlaceholder ='//div[contains(text(),\'Add your description here\')]';
     //Contact
     matSelect ='.mat-select';
@@ -106,7 +106,8 @@ export class SuppleDemandElements {
 
     selectSuppleRadioButton(){
         cy.get (this.supplySelection)
-            .find (this.selectMatRadioButtonTrue);
+            .find (this.selectMatRadioButtonTrue)
+            .eq(0)
 
     }
 
@@ -169,7 +170,7 @@ export class SuppleDemandElements {
 
     descriptionLabelText(){
         cy.xpath(this.descriptionLabel)
-            .should ('contain' , 'Description*');
+            .should ('contain' , 'Description');
     }
 
     contactLabelText(){
