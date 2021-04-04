@@ -5,12 +5,12 @@ import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/Su
 And('Fill No Products data for Products tab', () => {
     //No Products
     cy.xpath ('//h3[contains(text(),\'No Products\')]')
-        .should ('contain', 'No Products');
+        .should ('contain', 'No Products').
+        click({force:true});
 
-    cy.get ('[class="show-add-product-button"]')
-        .should ('be.enabled')
-        .click( {force:true})
-
+    cy.get ('.show-add-product-button > .mat-focus-indicator')
+        .should('be.enabled')
+        .click({force:true});
 
     //Click on
     cy.get ('[data-cy=add-product]')

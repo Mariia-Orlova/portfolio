@@ -108,8 +108,8 @@ And('Fill fields for General tab: Description,Contact,Contact preferences,Delive
         //.type('06/04/2021')
         //.should('have.value', '06/04/2021');
 
-    cy.contains('Quotation deadline *')
-        .should('contain', 'Quotation deadline *');
+    cy.contains('Quotation deadline*')
+        .should('contain', 'Quotation deadline*');
 
     cy.get(suppleDemandElements.quotationDeadline)
         .should('not.have.value', '');
