@@ -20,8 +20,9 @@ And('Fill Generate data for Products tab', () => {
         .should('contain', ' Add products ')
         .click ({force:true});
 
-    cy.get ('[class="mat-checkbox-layout"]').eq(0)
-        .check();
+    cy.get ('[data-cy="product-checkbox"]')
+        .eq(0)
+        .click({force:true});
 
     //click OK
     cy.get ('[data-cy="select-product"]')
@@ -30,10 +31,7 @@ And('Fill Generate data for Products tab', () => {
         .click({force:true});
 
 
-    //No Products
 
-   // cy.xpath ('//h3[contains(text(),\'No Products\')]')
-    //    .should ('contain', 'No Products');
 
 
 

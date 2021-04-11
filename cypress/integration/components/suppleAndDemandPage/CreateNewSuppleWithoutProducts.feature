@@ -1,7 +1,7 @@
 Feature:  Create new supple in Supple and Demand page
 
 
-  Scenario Outline: Create new supple with Products-Generate
+  Scenario Outline: Create new supple without Products
   Given Open login page
   Then  Login page is opened
   And   Check elements form
@@ -19,20 +19,19 @@ Feature:  Create new supple in Supple and Demand page
   And Fill fields for General tab: InternalID "<InternalID>"
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
+  And Fill Advanced options
   And Fill data for Expertise tab
-  And Fill Generate data for Products tab
   And Fill data for Publication tab
   And Fill Matchmaker tab
-  And Click on Save button
- Then Requests page is opened
- And New supple is displayed on screen "<Title>"
+  And Click on Create button
+  Then Requests page is opened
+  And New supple is displayed on screen "<Title>"
 
 
     Examples:
 
-      | Title             | InternalID | Maximumnumberofquotations  | Description
-      | Text for supple with product generate   | 565        | 6565                        | more description
-
+      | Title                   | InternalID | Maximumnumberofquotations  | Description         | Contact
+      | Title for new supple    | 565        | 6565                       | more description    | Mel
 
 
 

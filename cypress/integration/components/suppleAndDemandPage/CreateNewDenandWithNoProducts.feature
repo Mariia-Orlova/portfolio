@@ -14,7 +14,7 @@ Feature:  Create new supple in Supple and Demand page
   Then Supple and Demand page is opened
   When Click on Create button in Supple in Supple and Demand page
   Then Create Request for Quotation page is opened
-  When Select Supple radiobutton
+  When Select Demand radiobutton
   And Fill fields for General tab: Title "<Title>"
   And Fill fields for General tab: InternalID "<InternalID>"
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
@@ -22,14 +22,14 @@ Feature:  Create new supple in Supple and Demand page
   And Fill data for Expertise tab
   And Fill No Products data for Products tab
   And Fill data for Publication tab
-  And Fill Matchmaker tab
   And Click on Create button
-
+  Then Requests page is opened
+  And New Demand is displayed on screen "<Title>"
 
     Examples:
 
       | Title             | InternalID | Maximumnumberofquotations  | Description
-      | Text for supple   | 565        | 6565                        | more description
+      | Text for demand with no product  | 565        | 6565                        | more description
 
 
 

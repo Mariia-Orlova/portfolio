@@ -26,9 +26,11 @@ Background: Check elements for Login page
     And Fill Manually data for Products tab
     And Fill data for Publication tab
     And Fill Matchmaker tab
-    And Click on Create button
+    And Click on Save button
+    Then Requests page is opened
+    And New supple is displayed on screen "<Title>"
 
     Examples:
 
     | Title             | InternalID | Maximumnumberofquotations  | Description
-    | Text for supple   | 2132       | 23                         | more description
+    | Text for supple with product manually   | 2132       | 23                         | more description

@@ -13,6 +13,7 @@ export class SuppleDemandElements {
     selectMatRadioButtonTrue = 'mat-radio-button';
     //Supple Block
     supplySelection ='.supply-selection';
+    demandSelection ='.demand-selection';
     suppleTextInBlock = '.supply-selection > .p-12 > .w-100-p > .m-0';
     areYouLookingText = '//span[contains(text(),\'You are looking for companies that want to make a \')]';
     // Title field
@@ -31,6 +32,9 @@ export class SuppleDemandElements {
     inputTextDescription ='[class="nw-editor__res"]';
     descriptionLabel ='//h4[contains(text(),\'Description\')]';
     descriptionPlaceholder ='//div[contains(text(),\'Add your description here\')]';
+
+    // Advanced options
+
     //Contact
     matSelect ='.mat-select';
     contactLabel ='[class="mat-option-text"]';
@@ -59,8 +63,98 @@ export class SuppleDemandElements {
 
 
     //Matchmaker
-    matchmakerLabel = '//h1[contains(text(),\'Matchmaker\')]';
+    matchmakerLabel = '//h1[contains(text(),\'MatchMaker\')]';
 
+    // advanced option
+
+    selectAdvancedOptions(){
+        cy.contains('Advanced options')
+            .should('contain', 'Advanced options')
+            .click({force:true});
+    }
+
+    labelProductionSize(){
+    cy.xpath('//h3[contains(text(),\'Production size\')]')
+        .should ('contain', 'Production size')
+    };
+
+    //select ProductionSize
+
+    selectProductionSize(){
+        cy.get('mat-select[formcontrolname="productionSize"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' Does not apply ')
+            .and ('contain' ,' Prototypes ')
+            .and ('contain', ' Single Pieces ')
+            .and ('contain', ' Large Series ')
+            .and ('contain', ' Series Work ')
+            .and ('contain', ' Urgent Work ')
+            .and ('contain', ' Others ')
+
+    }
+
+    labelProductionPlanning(){
+        cy.xpath('//h3[contains(text(),\'Production planning\')]')
+            .should ('contain', 'Production planning')
+    };
+
+    selectProductionPlanning(){
+        cy.get('mat-select[formcontrolname="productionPlanning"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' Does not apply ')
+            .and ('contain' ,' Make-to-Stock ')
+            .and ('contain', ' Make-to-Order ')
+            .and ('contain', ' Engineer-to-Order ')
+            .and ('contain', ' Others ')
+    };
+
+    labelCertificate(){
+        cy.xpath('//h3[contains(text(),\'Certificate\')]')
+            .should ('contain', 'Certificate')
+    };
+
+    selectCertificate(){
+        cy.get('mat-select[formcontrolname="certificates"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' AS9100 ')
+            .and ('contain' ,' DIN 18800-7:2008 Class A-C ')
+            .and ('contain', ' DIN 18800-7:2008 Class D/E ')
+    };
+
+    labelIndustries(){
+        cy.xpath('//h3[contains(text(),\'Industries\')]')
+            .should ('contain', 'Industries')
+    };
+
+
+    selectIndustries(){
+        cy.get('mat-select[formcontrolname="industries"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' Drive and gear technology ')
+            .and ('contain' ,' Additive manufacturing ')
+            .and ('contain', ' Agro-industry ')
+    };
+
+    labelTolerance(){
+        cy.xpath('//h3[contains(text(),\'Tolerance\')]')
+            .should ('contain', 'Tolerance')
+    };
+
+    selectTolerances(){
+        cy.get('mat-select[formcontrolname="tolerances"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' < 0,0009 ')
+            .and ('contain' ,' ± 0,001 ')
+            .and ('contain', ' ± 0,005 ')
+    };
+
+
+    //title
 
     checkTitleAndSecondTextForCreateSuppleAndDemand (){
         cy.xpath (this.createRequestForQuotationLabel)
@@ -109,7 +203,12 @@ export class SuppleDemandElements {
             .find (this.selectMatRadioButtonTrue)
             .eq(0)
 
-    }
+    };
+
+    selectDemandRadioButton(){
+        cy.get (this.demandSelection)
+            .click({force:true})
+    };
 
 
     fillTitleText (){
@@ -177,8 +276,9 @@ export class SuppleDemandElements {
         cy.get('mat-select[formcontrolname="contactUser"]')
             .click();
         cy.get('mat-option')
+            .eq(0)
             .should('contain','Nikos  Chalkos')
-            .click();
+            .click({force:true});
     }
 
     selectDeliveryCondition(){
@@ -202,7 +302,7 @@ export class SuppleDemandElements {
 
 
     selectMaterial(){
-        cy.get('[class="mat-select-value"]')
+        cy.get('mat-select')
             .eq(3)
             .click({force:true});
         cy.get('mat-option')
@@ -217,7 +317,6 @@ export class SuppleDemandElements {
 
     selectTenderArea(){
         cy.xpath('//span[contains(text(),\'Belgium, England, Germany, Ireland, The Netherland\')]')
-
             .should('contain', 'Belgium, England, Germany, Ireland, The Netherlands, Northern Ireland, Scotland, Wales')
 
     }
@@ -304,7 +403,7 @@ export class SuppleDemandElements {
 
     matchmakerTab(){
         cy.xpath(this.matchmakerLabel)
-            .should ('contain' , 'Matchmaker');
+            .should ('contain' , 'MatchMaker');
     }
 
 // Engineer block
