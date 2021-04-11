@@ -1,4 +1,4 @@
-Feature:  Create new supple in Supple and Demand page
+Feature:  Create new demand in Supple and Demand page
 
 
   Scenario Outline: Create new Demand without Products

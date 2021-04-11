@@ -1,4 +1,4 @@
-Feature:  Create new supple in Supple and Demand page
+Feature:  Create new demand in Supple and Demand page
 
 
 Background: Check elements for Login page
@@ -14,7 +14,7 @@ Background: Check elements for Login page
   Then Supple and Demand page is opened
 
 
-  Scenario Outline: Create new supple with Products-Manually
+  Scenario Outline: Create new demand with Products-Manually
     When Click on Create button in Supple in Supple and Demand page
     Then Create Request for Quotation page is opened
     When Select Demand radiobutton

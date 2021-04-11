@@ -25,4 +25,4 @@ cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
       -Product block no product -done
       
       
- Create new demand - in progress
+ Create new demand - done
