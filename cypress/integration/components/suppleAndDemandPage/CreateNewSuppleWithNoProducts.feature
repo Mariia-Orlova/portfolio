@@ -23,13 +23,15 @@ Feature:  Create new supple in Supple and Demand page
   And Fill No Products data for Products tab
   And Fill data for Publication tab
   And Fill Matchmaker tab
-  And Click on Create button
+  And Click on Save button
+  Then Requests page is opened
+  And New supple is displayed on screen "<Title>"
 
 
     Examples:
 
       | Title             | InternalID | Maximumnumberofquotations  | Description
-      | Text for supple   | 565        | 6565                        | more description
+      | Text for supple with no product  | 565        | 6565                        | more description
 
 
 
