@@ -1,7 +1,7 @@
-Feature:  Create new supple in Supple and Demand page
+Feature:  Create new demand in Supple and Demand page
 
 
-  Scenario Outline: Create new supple with Products-Generate
+  Scenario Outline: Create new demand with Products-Generate
   Given Open login page
   Then  Login page is opened
   And   Check elements form
