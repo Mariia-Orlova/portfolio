@@ -400,8 +400,8 @@ And('Click on Create button', () => {
 });
 
 Then('Requests page is opened', () => {
-    cy.url({timeout:5000})
-        .should('include','/requests');
+    cy.url()
+        .should('contain','/requests');
     cy.title()
         .should('eq', 'TECH2B - Request List');
 });
