@@ -9,8 +9,8 @@ When('Click on Create button in Supple in Supple and Demand page', () => {
 });
 
 Then('Create Request for Quotation page is opened', () => {
-    cy.url({timeout:6000})
-        .should('include', '/create/request');
+    cy.url()
+        .should('contain', '/create/request');
     cy.title()
         .should('eq', 'TECH2B - Create Request');
     suppleDemandElements

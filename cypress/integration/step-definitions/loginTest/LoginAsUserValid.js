@@ -29,10 +29,10 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 
 
 Then('Auth is successfully', () =>{
-    cy.url({timeout:5000})
-        .should('include', '/implicit/callback');
+    cy.url()
+        .should('contain', '/implicit/callback');
    // cy.wait(4000);
-    cy.url({timeout:5000})
-        .should('include', '/dashboard')
+    cy.url()
+        .should('contain', '/dashboard')
 
 });
