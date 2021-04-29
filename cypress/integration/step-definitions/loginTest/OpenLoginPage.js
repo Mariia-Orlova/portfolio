@@ -26,7 +26,8 @@ Then('Login page is opened', () => {
 And('Check elements form', () => {
     loggedElements
         .checkForm();
-    cy.contains('Login to your account');
+    cy.get('.title')
+        .should('contain', 'LOGIN TO YOUR ACCOUNT');
     loggedElements
         .checkLogo();
     loggedElements
