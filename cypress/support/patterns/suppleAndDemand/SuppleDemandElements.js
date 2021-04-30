@@ -29,7 +29,7 @@ export class SuppleDemandElements {
     maximumNumberLabel ='//h4[contains(text(),\'Maximum number of quotations\')]';
     maximumNumberPlaceholder ='[placeholder="Internal ID"]';
     //Description
-    inputTextDescription ='[class="nw-editor__res"]';
+    inputTextDescription ='.nw-editor__res';
     descriptionLabel ='//h4[contains(text(),\'Description\')]';
     descriptionPlaceholder ='//div[contains(text(),\'Add your description here\')]';
 
@@ -44,17 +44,19 @@ export class SuppleDemandElements {
     // Expertise tab
     expertiseLabel = '//h1[contains(text(),\'Expertise\')]';
     selectCategory = '//h4[contains(text(),\'Please select the categories below that apply to y\')]';
-    categoryEngineering = '//mat-chip[contains(text(),\'Engineering\')]';
-    categoryTechnologies = '//mat-chip[contains(text(),\'Technologies\')]';
-    categoryElectricalEngineering = '//mat-chip[contains(text(),\'Electrical engineering\')]';
-    categoryTransport = '//mat-chip[contains(text(),\'Transport\')]';
-    categorySoftware ='//mat-chip[contains(text(),\'Software\')]';
-    categoryOthers = '//mat-chip[contains(text(),\'Others\')]';
-    categoryArticles = '//mat-chip[contains(text(),\'Articles\')]';
-    categorySurfaceTreatment = '//mat-chip[contains(text(),\'Surface treatment\')]';
+    categoryChiplist ='[data-cy="category-chiplist"]';
+    //categoryEngineering = '//mat-chip[contains(text(),\'Engineering\')]';
+    //categoryTechnologies = '//mat-chip[contains(text(),\'Technologies\')]';
+    //categoryElectricalEngineering = '//mat-chip[contains(text(),\'Electrical engineering\')]';
+    //categoryTransport = '//mat-chip[contains(text(),\'Transport\')]';
+    //categorySoftware ='//mat-chip[contains(text(),\'Software\')]';
+    //categoryOthers = '//mat-chip[contains(text(),\'Others\')]';
+    //categoryArticles = '//mat-chip[contains(text(),\'Articles\')]';
+    //categorySurfaceTreatment = '//mat-chip[contains(text(),\'Surface treatment\')]';
 
     //Product tab
     productTabLabel ='//h1[contains(text(),\'Products\')]';
+    material ='[data-cy="material-chiplist"]';
 
     //Publication
     publicationLabel = '//h1[contains(text(),\'Publication\')]';
@@ -246,7 +248,7 @@ export class SuppleDemandElements {
 
     inputTextMaximumNumberOfQuotationsValue(){
         cy.get (this.inputTextMaximumNumberOfQuotations)
-            .should ('be.visible')
+            .scrollIntoView()
             .and ('be.empty');
     }
 
@@ -274,7 +276,7 @@ export class SuppleDemandElements {
 
     contactLabelText(){
         cy.get('mat-select[formcontrolname="contactUser"]')
-            .click();
+            .click({force:true});
         cy.get('mat-option')
             .eq(0)
             .should('contain','Nikos  Chalkos')
@@ -282,7 +284,7 @@ export class SuppleDemandElements {
     }
 
     selectDeliveryCondition(){
-        cy.get('mat-select[formcontrolname="deliveryCondition"]')
+        cy.get ('mat-select[formcontrolname="deliveryCondition"]')
             .click({force:true});
         cy.get('mat-option')
             .should('contain',' Cost and freight')
@@ -299,21 +301,44 @@ export class SuppleDemandElements {
             .and ('contain' , ' Others')
     }
 
-
-
-    selectMaterial(){
-        cy.get('mat-select')
-            .eq(3)
+    selectContact(){
+        cy.get ('mat-select[formcontrolname="contactUser"]')
+            .scrollIntoView()
             .click({force:true});
         cy.get('mat-option')
-            .should('contain',' Aluminium ')
-            .and ('contain', ' Brass ')
-            .and ('contain', ' Copper ')
-            .and ('contain', ' Stainless steel ')
-            .and ('contain', ' Wrought iron ')
-            .and ('contain', ' Others ')
+            .should('have.value','')
 
     }
+
+
+    selectMaterialMetal(){
+        cy.get(this.material)
+            .eq(0)
+            .should('contain',' Metal')
+            .click({force:true});
+    }
+    selectMaterialPlastic(){
+        cy.get(this.material)
+            .eq(1)
+            .should('contain',' Plastic')
+            .click({force:true});
+    }
+
+    selectMaterialWood(){
+        cy.get(this.material)
+            .eq(2)
+            .should('contain',' Wood')
+            .click({force:true});
+    }
+
+    selectMaterialOthers(){
+        cy.get(this.material)
+            .eq(3)
+            .should('contain',' Others')
+            .click({force:true});
+    }
+
+
 
     selectTenderArea(){
         cy.xpath('//span[contains(text(),\'Belgium, England, Germany, Ireland, The Netherland\')]')
@@ -361,7 +386,7 @@ export class SuppleDemandElements {
 
     contactPreferences(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
-            .click({force:true});
+            .click();
         cy.get('mat-option')
             .should('contain','Only through Tech2B')
             .and ('contain', ' Also through Email ')
@@ -403,6 +428,7 @@ export class SuppleDemandElements {
 
     matchmakerTab(){
         cy.xpath(this.matchmakerLabel)
+            .scrollIntoView()
             .should ('contain' , 'MatchMaker');
     }
 
@@ -413,44 +439,60 @@ export class SuppleDemandElements {
     }
 
     selectCategoryEngineering(){
-        cy.xpath(this.categoryEngineering)
-            .should ('contain' , ' Engineering');
+        cy.get(this.categoryChiplist)
+            .eq(0)
+            .should ('contain' , ' Engineering')
+            .click({force:true});
     }
 
     selectCategoryTechnologies(){
-        cy.xpath(this.categoryTechnologies)
-            .should ('contain' , ' Technologies');
+        cy.get(this.categoryChiplist)
+            .eq(1)
+            .should ('contain' , ' Technologies')
+            .click({force:true});
     }
 
     selectCategoryElectricalEngineering(){
-        cy.xpath(this.categoryElectricalEngineering)
-            .should ('contain' , ' Electrical engineering');
+        cy.get(this.categoryChiplist)
+            .eq(2)
+            .should ('contain' , ' Electrical engineering')
+            .click({force:true});
     }
 
     selectCategoryTransport(){
-        cy.xpath(this.categoryTransport)
-            .should ('contain' , ' Transport');
+        cy.get(this.categoryChiplist)
+            .eq(3)
+            .should ('contain' , ' Transport')
+            .click({force:true});
     }
 
     selectCategorySoftware(){
-        cy.xpath(this.categorySoftware)
-            .should ('contain' , ' Software');
+        cy.get(this.categoryChiplist)
+            .eq(4)
+            .should ('contain' , ' Software')
+            .click({force:true});
     }
 
     selectCategoryOthers(){
-        cy.xpath(this.categoryOthers)
-            .should ('contain' , ' Others');
+        cy.get(this.categoryChiplist)
+            .eq(5)
+            .should ('contain' , ' Others')
+            .click({force:true});
     }
 
 
     selectCategoryArticles(){
-        cy.xpath(this.categoryArticles)
-            .should ('contain' , ' Articles');
+        cy.get(this.categoryChiplist)
+            .eq(6)
+            .should ('contain' , ' Articles')
+            .click({force:true});
     }
 
     selectCategorySurfaceTreatment(){
-        cy.xpath(this.categorySurfaceTreatment)
-            .should ('contain' , ' Surface treatment');
+        cy.get(this.categoryChiplist)
+            .eq(7)
+            .should ('contain' , ' Surface treatment')
+            .click({force:true});
     }
 
 

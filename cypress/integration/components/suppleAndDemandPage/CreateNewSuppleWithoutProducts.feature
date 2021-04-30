@@ -17,8 +17,8 @@ Feature:  Create new supple in Supple and Demand page
   When Select Supple radiobutton
   And Fill fields for General tab: Title "<Title>"
   And Fill fields for General tab: InternalID "<InternalID>"
-  And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
+  And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill Advanced options
   And Fill data for Expertise tab
   And Fill data for Publication tab

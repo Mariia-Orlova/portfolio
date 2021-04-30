@@ -70,25 +70,17 @@ And('Fill fields for General tab: Maximum number of quotations {string}', (Maxim
         .maximumNumberLabelText();
 
     cy.get (suppleDemandElements.inputTextMaximumNumberOfQuotations)
+        .click({force:true})
+        .scrollIntoView()
         .type(Maximumnumberofquotations)
         .should ('have.value' , Maximumnumberofquotations);
 });
 
 And('Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline', () => {
 
-    suppleDemandElements
-        .inputTextDescriptionValue();
-    //  suppleDemandElements
-    //  .DescriptionPlaceholder();
-    suppleDemandElements
-        .descriptionLabelText();
-
-    cy.get(suppleDemandElements.inputTextDescription)
-        .type('Description')
-        .should('have.value', '');
-
     cy.contains('Contact')
         .should('contain', 'Contact');
+
 
     suppleDemandElements
         .contactLabelText();
@@ -111,16 +103,30 @@ And('Fill fields for General tab: Description,Contact,Contact preferences,Delive
     cy.contains('Quotation deadline*')
         .should('contain', 'Quotation deadline*');
 
+    cy.contains('Delivery condition')
+        .should('contain', 'Delivery condition');
+    suppleDemandElements
+        .selectDeliveryCondition();
+
     cy.get(suppleDemandElements.quotationDeadline)
         .should('not.have.value', '');
         //.clear({force:true})
         //.type('30/03/2021')
         //.should('have.value', '30/03/2021');
 
-    cy.contains('Delivery condition')
-        .should('contain', 'Delivery condition');
     suppleDemandElements
-        .selectDeliveryCondition();
+        .inputTextDescriptionValue();
+    //  suppleDemandElements
+    //  .DescriptionPlaceholder();
+    suppleDemandElements
+        .descriptionLabelText();
+
+    cy.get(suppleDemandElements.inputTextDescription)
+        .click({force:true})
+        .scrollIntoView()
+        .type('Description')
+        .should('have.value', '');
+
 });
 
 And ('Fill Advanced options', () =>{
@@ -175,8 +181,9 @@ And('Fill data for Expertise tab', () => {
     suppleDemandElements
         .selectCategorySurfaceTreatment();
 
-    cy.xpath(suppleDemandElements.categoryEngineering)
-        .click({force:true});
+    //cy.get(suppleDemandElements.material)
+       // .eq(0)
+        //.click({force:true});
     cy.contains ('Advice')
         .should ('contain', 'Advice')
         .click({force:true});
@@ -303,7 +310,13 @@ And('Fill Manually data for Products tab', () => {
     cy.contains ('Material')
         .should ('contain', 'Material');
     suppleDemandElements
-        .selectMaterial();
+        .selectMaterialMetal();
+    suppleDemandElements
+        .selectMaterialPlastic();
+    suppleDemandElements
+        .selectMaterialWood();
+    suppleDemandElements
+        .selectMaterialOthers();
 
     //Description product
     cy.get(suppleDemandElements.inputTextDescription)
