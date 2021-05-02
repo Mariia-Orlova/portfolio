@@ -405,7 +405,7 @@ export class SuppleDemandElements {
 
     contactPreferencesAlsoPhone(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
-            .click({force:true});
+            .click( {force:true});
         cy.get('mat-option')
             .should('contain',' Also through Phone ')
             .click({force:true});
