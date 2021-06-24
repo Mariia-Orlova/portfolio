@@ -35,7 +35,7 @@ export class LoggedElements {
     checkLogo(){
         cy.get('img')
             .should ('be.visible')
-            .should ('have.attr', 'src', 'assets/images/logos/t2b-logo-text.svg');
+            .and ('have.attr', 'src', 'assets/images/logos/t2b-logo-text.svg');
     };
 
     userNameLabelDisplay() {
@@ -52,13 +52,13 @@ export class LoggedElements {
     userNameInput() {
         cy.get(this.usernameInput)
             .should('be.visible')
-            .should('be.empty');
+            .and('be.empty');
     };
 
     passWordInput() {
         cy.get(this.passwordInput)
             .should('be.visible')
-            .should('be.empty');
+            .and('be.empty');
     };
 
     rememberMeCheckbox() {
@@ -69,33 +69,34 @@ export class LoggedElements {
     rememberMeLabelTitle(){
         cy.get(this.rememberMeLabel)
             .should('be.visible')
-            .should ('contain', 'Remember me')
+            .and ('contain', 'Remember me')
 
     }
 
     logInButton() {
         cy.get(this.loginButton)
             .should('be.visible')
-            .should('be.not.disabled')
-            .should('contain', 'Sign In');
+            .and('be.not.disabled')
+            .and('contain', 'Sign In');
     };
 
     forgetPasswordLink() {
         cy.get(this.clickForgetPasswordLink)
             .should('be.visible')
-            .should('contain', ' Forgot Password ')
-            .should('have.attr', 'href', '/reset-password');
+            .and('contain', ' Forgot Password ')
+            .and('have.attr', 'href', '/reset-password');
     };
 
     createAccountLink(){
          cy.xpath (this.createAnAccountLink)
             .should ('contain', 'Create an account')
-            .should ('have.attr','href', '/signup');
+            .and ('have.attr','href', '/signup');
 
     };
 
     dontHaveAnAccount() {
         cy.contains('Don\'t have an account?')
+            .should('be.visible');
 
     };
 
@@ -114,29 +115,29 @@ export class LoggedElements {
     titleForgetPasswordLabel(){
         cy.contains('Recover your password')
             .should('be.visible')
-            .should('contain', 'Recover your password');
+            .and('contain', 'Recover your password');
 
     };
 
     inputEmailForgetPassword(){
         cy.get(this.fillInput)
             .should('be.visible')
-            .should('be.empty');
+            .and('be.empty');
 
     };
 
     forgetPasswordButtonReset(){
         cy.get(this.forgetPasswordButtonResetElement)
             .should('be.visible')
-            .should('be.disabled')
-            .should('contain', ' Reset ');
+            .and('be.disabled')
+            .and('contain', ' Reset ');
     };
 
     goBackToLoginLink(){
         cy.get (this.link)
             .should ('be.visible')
-            .should ('contain' , ' Go back to login ')
-            .should ('have.attr','href', '/login');
+            .and ('contain' , ' Go back to login ')
+            .and ('have.attr','href', '/login');
 
     }
 }
