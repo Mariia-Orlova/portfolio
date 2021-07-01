@@ -1,3 +1,4 @@
+
 import {When,Then} from "cypress-cucumber-preprocessor/steps";
 
 import {globalMenu} from "../../../support/patterns/globalElements/GlobalMenu";
