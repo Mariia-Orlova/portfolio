@@ -74,7 +74,13 @@ And('Fill No Products data for Products tab', () => {
     cy.contains ('Material')
         .should ('contain', 'Material');
     suppleDemandElements
-        .selectMaterial();
+        .selectMaterialMetal();
+    suppleDemandElements
+        .selectMaterialWood();
+    suppleDemandElements
+        .selectMaterialPlastic();
+    suppleDemandElements
+        .selectMaterialOthers();
 
     //Description product
     cy.get(suppleDemandElements.inputTextDescription)
