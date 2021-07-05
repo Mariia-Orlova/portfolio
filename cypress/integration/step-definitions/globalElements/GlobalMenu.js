@@ -22,6 +22,11 @@ And('Check Companies link', () => {
         .checkNavCompaniesLink();
 });
 
+And('Check News Link', () => {
+   globalMenu
+       .checkNavNewsLink();
+});
+
 And('Check Dashboard link', () => {
     globalMenu
         .checkNavDashboardLink();
