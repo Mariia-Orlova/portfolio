@@ -20,8 +20,8 @@ Background: Check elements for Login page
     When Select Demand radiobutton
     And Fill fields for General tab: Title "<Title>"
     And Fill fields for General tab: InternalID "<InternalID>"
-    And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
     And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
+    And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab
