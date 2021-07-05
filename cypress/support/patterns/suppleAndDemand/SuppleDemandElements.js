@@ -287,11 +287,11 @@ export class SuppleDemandElements {
         cy.get ('mat-select[formcontrolname="deliveryCondition"]')
             .click({force:true});
         cy.get('mat-option')
-            .should('contain',' Cost and freight')
+            .should('contain',' Cost and freight (CFR)')
             .and ('contain', ' Cost insurance and freight')
             .and ('contain',' Carriage and insurance paid to')
             .and('contain', ' Carriage paid to')
-            .and ('contain', ' Delivered at place')
+            .and ('contain', ' Delivery at place (DAP)')
             .and ('contain',' Delivered at terminal')
             .and ('contain' ,' Delivered duty paid')
             .and ('contain' , ' Ex works')
