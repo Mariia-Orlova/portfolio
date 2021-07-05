@@ -388,10 +388,13 @@ export class SuppleDemandElements {
         cy.get('mat-select[formcontrolname="contactPreference"]')
             .click();
         cy.get('mat-option')
+
             .should('contain','Only through Tech2B')
             .and ('contain', ' Also through Email ')
-            .and ('contain', ' Also through Phone ')
-            .click({ multiple: true });
+            .and ('contain', ' Also through Phone ');
+       // cy.get('mat')
+
+        //  .click({ multiple: true });
 
 
     }
