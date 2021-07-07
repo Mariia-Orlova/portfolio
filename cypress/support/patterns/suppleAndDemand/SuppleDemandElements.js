@@ -124,6 +124,33 @@ export class SuppleDemandElements {
             .should('contain',' AS9100 ')
             .and ('contain' ,' DIN 18800-7:2008 Class A-C ')
             .and ('contain', ' DIN 18800-7:2008 Class D/E ')
+            .and ('contain', ' DIN 4113 ')
+            .and ('contain', ' DIN 6701 ')
+            .and ('contain', ' DIN EN 1090 ')
+            .and ('contain', ' DIN EN ISO 3834 ')
+            .and ('contain', ' EN 15085 ')
+            .and ('contain', ' EN 9100 ')
+            .and ('contain', ' EN ISO 13485 ')
+            .and ('contain', ' FFL Class 10 ')
+            .and ('contain', ' FFL Class 6 ')
+            .and ('contain', ' FFL Class 7 ')
+            .and ('contain', ' IATF 16949 ')
+            .and ('contain', ' ISO 14001 ')
+            .and ('contain', ' ISO 9001:2008 ')
+            .and ('contain', ' ISO 9001:2015 ')
+            .and ('contain', ' ISO-TS 16949:2002 ')
+            .and ('contain', ' ISO-TS 16949:2009 ')
+            .and ('contain', ' JAR 145 ')
+            .and ('contain', ' OHSAS 18000 ')
+            .and ('contain', ' PART 145 ')
+            .and ('contain', ' Part 21/G ')
+            .and ('contain', ' QSF-A ')
+            .and ('contain', ' QSF-B ')
+            .and ('contain', ' SA 8000 ')
+            .and ('contain', ' VDA 6.1 ')
+            .and ('contain', ' VDA 6.2 ')
+            .and ('contain', ' VDA 6.4 ')
+            .and ('contain', ' Others ')
     };
 
     labelIndustries(){
@@ -139,6 +166,29 @@ export class SuppleDemandElements {
             .should('contain',' Drive and gear technology ')
             .and ('contain' ,' Additive manufacturing ')
             .and ('contain', ' Agro-industry ')
+            .and ('contain', ' Automotive ')
+            .and ('contain', ' Construction and real estate ')
+            .and ('contain', '  Chemical industry ')
+            .and ('contain', ' Electrotechnical industry ')
+            .and ('contain', ' Hydraulic and pneumatic industry ')
+            .and ('contain', ' Infrastructure and energy ')
+            .and ('contain', ' Installation technology and construction ')
+            .and ('contain', ' Boiler, container and tank construction ')
+            .and ('contain', ' Plastic and Mold technology ')
+            .and ('contain', ' Aerospace industry ')
+            .and ('contain', ' Machine and equipment construction ')
+            .and ('contain', ' Medical and pharmaceutical industry ')
+            .and ('contain', ' Mining and tunnel engineering ')
+            .and ('contain', ' Military engineering ')
+            .and ('contain', ' Precision technology and mechanical engineering ')
+            .and ('contain', ' Product development and R&D ')
+            .and ('contain', ' Ship-building ')
+            .and ('contain', ' Service and maintenance ')
+            .and ('contain', '  Railway and rail vehicle industry ')
+            .and ('contain', ' Packaging industry ')
+            .and ('contain', ' Manufacture of machine tools ')
+            .and ('contain', ' Food industry / Food ')
+            .and ('contain', ' Others ')
     };
 
     labelTolerance(){
@@ -153,6 +203,21 @@ export class SuppleDemandElements {
             .should('contain',' < 0,0009 ')
             .and ('contain' ,' ± 0,001 ')
             .and ('contain', ' ± 0,005 ')
+            .and ('contain', ' ± 0,01 ')
+            .and ('contain', ' ± 0,02 ')
+            .and ('contain', ' ± 0,05 ')
+            .and ('contain', ' ± 0,1 ')
+            .and ('contain', ' ± 0,15 ')
+            .and ('contain', ' ± 0,2 ')
+            .and ('contain', ' ± 0,3 ')
+            .and ('contain', ' ± 0,5 ')
+            .and ('contain', ' ± 0,8 ')
+            .and ('contain', ' ± 1 ')
+            .and ('contain', ' ± 2 ')
+            .and ('contain', ' ± 5 ')
+            .and ('contain', ' ± 10 ')
+            .and ('contain', ' > 10 ')
+
     };
 
 
@@ -392,6 +457,7 @@ export class SuppleDemandElements {
             .should('contain','Only through Tech2B')
             .and ('contain', ' Also through Email ')
             .and ('contain', ' Also through Phone ');
+
        // cy.get('mat')
 
         //  .click({ multiple: true });
