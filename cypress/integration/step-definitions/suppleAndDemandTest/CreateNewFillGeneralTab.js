@@ -50,30 +50,36 @@ And('Fill fields for General tab: Maximum number of quotations {string}', (Maxim
 And('Fill fields for General tab: Description {string}', (Description) => {
     suppleDemandElements
         .inputTextDescriptionValue();
-
+    suppleDemandElements
+        .descriptionLabelText();
 
     cy.get (suppleDemandElements.inputTextDescription)
-        .click({force:true})
         .scrollIntoView()
+        .click({force:true})
         .type(Description)
         .should ('have.value' , Description);
+
+
 });
 
-And('Fill fields for General tab: Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline', () => {
 
+And('Fill fields for General tab: Contact', (Description) => {
     cy.contains('Contact')
         .should('contain', 'Contact');
 
-
     suppleDemandElements
         .contactLabelText();
+});
 
+And('Fill fields for General tab: Contact preferences', (Description) => {
     cy.contains('Contact preferences ')
         .should('contain', 'Contact preferences ');
 
     suppleDemandElements
         .contactPreferences();
+});
 
+And('Fill fields for General tab: Delivery date', (Description) => {
     cy.contains('Delivery date*')
         .should('contain', 'Delivery date*');
 
@@ -82,35 +88,28 @@ And('Fill fields for General tab: Contact,Contact preferences,Delivery date,Deli
     //.clear({force:true})
     //.type('06/04/2021')
     //.should('have.value', '06/04/2021');
+});
 
+And('Fill fields for General tab: Quotation deadline}', (Description) => {
     cy.contains('Quotation deadline*')
         .should('contain', 'Quotation deadline*');
-
-    cy.contains('Delivery condition')
-        .should('contain', 'Delivery condition');
-    suppleDemandElements
-        .selectDeliveryCondition();
 
     cy.get(suppleDemandElements.quotationDeadline)
         .should('not.have.value', '');
     //.clear({force:true})
     //.type('30/03/2021')
     //.should('have.value', '30/03/2021');
-
-    suppleDemandElements
-        .inputTextDescriptionValue();
-    //  suppleDemandElements
-    //  .DescriptionPlaceholder();
-    suppleDemandElements
-        .descriptionLabelText();
-
-    cy.get(suppleDemandElements.inputTextDescription)
-        .click({force:true})
-        .scrollIntoView()
-        .type('Description')
-        .should('have.value', '');
-
 });
+
+And('Fill fields for General tab: Delivery condition', (Description) => {
+    cy.contains('Delivery condition')
+        .should('contain', 'Delivery condition');
+    suppleDemandElements
+        .selectDeliveryCondition();
+});
+
+
+
 
 And ('Fill Advanced options', () =>{
     suppleDemandElements

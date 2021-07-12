@@ -1,4 +1,4 @@
-import {When,Then, And} from "cypress-cucumber-preprocessor/steps";
+import {When} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 When ('Fill data for Publication tab', () => {
@@ -14,7 +14,7 @@ When ('Fill data for Publication tab', () => {
     cy.contains('You can choose the countries that your request will be public to (default is all countries)')
         .should('contain', 'You can choose the countries that your request will be public to (default is all countries)');
 
-    cy.get('.mat-checkbox-inner-container')
+    cy.get(suppleDemandElements.publicationCheckboxInnerContainer)
         .find('input')
         .should('be.checked');
 

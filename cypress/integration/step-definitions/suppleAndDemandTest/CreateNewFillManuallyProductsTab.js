@@ -5,25 +5,25 @@ When ('Fill Manually data for Products tab', () => {
     //Check product tab
     suppleDemandElements
         .productTab();
-    cy.xpath('//h4[contains(text(),\'Add your product files relevant to your request\')]')
+    cy.xpath(suppleDemandElements.CheckProductTabAddProduct)
         .should('contain', 'Add your product files relevant to your request');
-    cy.xpath ('//p[contains(text(),\'Select 1 of the 3 options to add products below\')]')
+    cy.xpath (suppleDemandElements.CheckProductTabSelectOptions)
         .should ('contain' ,'Select 1 of the 3 options to add products below');
     //Manual button
-    cy.xpath ('//h3[contains(text(),\'Manually\')]').scrollIntoView()
+    cy.xpath (suppleDemandElements.manualButton).scrollIntoView()
         .should ('contain', 'Manually')
         .click({force:true});
     //Click on
-    cy.get ('[data-cy=add-product]')
+    cy.get (suppleDemandElements.ClickOnAddProduct)
         .find('.mat-button-wrapper')
         .should ('contain', ' Add product ')
         .click({force:true});
 
     //Check on elements
-    cy.get ('[data-cy="add-existing-product"]')
+    cy.get (suppleDemandElements.addExistingProduct)
         .should ('contain', 'Add existing product');
 
-    cy.get ('[data-cy="add-new-product"]')
+    cy.get (suppleDemandElements.AddNewProduct)
         .should ('contain', 'Add new product')
         .click({force:true});
 
@@ -46,7 +46,7 @@ When ('Fill Manually data for Products tab', () => {
     //Title input
     cy.contains ('Title')
         .should ('contain', 'Title');
-    cy.get ('[data-cy="title-input"]')
+    cy.get (suppleDemandElements.TitleInput)
         .should ('be.empty')
         .type ('New product',{force:true})
         .should ('have.value', 'New product');
@@ -55,7 +55,7 @@ When ('Fill Manually data for Products tab', () => {
     cy.contains ('Quantity')
         .should ('contain', 'Quantity');
 
-    cy.get ('[data-cy="quantity-input"]')
+    cy.get (suppleDemandElements.QuantityInput)
         .should ('be.empty')
         .type ('2',{force:true})
         .should ('have.value', '2');

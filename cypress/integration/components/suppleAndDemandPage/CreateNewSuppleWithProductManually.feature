@@ -20,8 +20,13 @@ Background: Check elements for Login page
     When Select Supple radiobutton
     And Fill fields for General tab: Title "<Title>"
     And Fill fields for General tab: InternalID "<InternalID>"
-    And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
+    And Fill fields for General tab: Contact
+    And Fill fields for General tab: Contact preferences
+    And Fill fields for General tab: Delivery date
+    And Fill fields for General tab: Delivery condition
+    And Fill fields for General tab: Quotation deadline
     And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
+    And Fill fields for General tab: Description "<Description>"
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab
