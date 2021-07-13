@@ -364,22 +364,22 @@ export class SuppleDemandElements {
             .should('contain','Nikos  Chalkos')
             .click({force:true});
     }
-
-    selectDeliveryCondition(){
+// Check all titles. ROOT
+   selectDeliveryCondition(){
         cy.get ('mat-select[formcontrolname="deliveryCondition"]')
             .click({force:true});
         cy.get('mat-option')
             .should('contain',' Cost and freight (CFR)')
-            .and ('contain', ' Cost insurance and freight')
-            .and ('contain',' Carriage and insurance paid to')
-            .and('contain', ' Carriage paid to')
+            .and ('contain', ' Cost insurance and freight (CIF)')
+            .and ('contain',' Carriage and insurance paid to (CIP)')
+            .and('contain', ' Carriage paid to (CPT)')
             .and ('contain', ' Delivery at place (DAP)')
-      //      .and ('contain',' Delivered at terminal')
-            .and ('contain' ,' Delivered duty paid')
-            .and ('contain' , ' Ex works')
-            .and ('contain' , ' Free alongside ship')
-            .and ('contain' , ' Free carrier')
-            .and ('contain' , ' Free on board')
+            .and ('contain', ' ROOT.DELIVERED_AT_TERMINAL')
+            .and ('contain' ,' Deliverd duty paid (DDP)')
+            .and ('contain' , ' Ex works (EXW)')
+            .and ('contain' , ' Free alongside ship (FAS)')
+            .and ('contain' , ' Free carrier (FCA)')
+            .and ('contain' , ' Free on board (FOB)')
             .and ('contain' , ' Others');
     }
 

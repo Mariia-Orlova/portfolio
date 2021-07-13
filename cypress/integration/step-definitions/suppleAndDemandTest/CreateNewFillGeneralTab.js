@@ -16,7 +16,7 @@ When ('Fill fields for General tab: Title {string}', (Title) => {
 });
 
 
-And('Fill fields for General tab: InternalID {string}', (InternalID) => {
+Then('Fill fields for General tab: InternalID {string}', (InternalID) => {
 
     suppleDemandElements
         .internalProjectIdLabelText();
@@ -90,7 +90,7 @@ And('Fill fields for General tab: Delivery date', (Description) => {
     //.should('have.value', '06/04/2021');
 });
 
-And('Fill fields for General tab: Quotation deadline}', (Description) => {
+And('Fill fields for General tab: Quotation deadline', (Description) => {
     cy.contains('Quotation deadline*')
         .should('contain', 'Quotation deadline*');
 
