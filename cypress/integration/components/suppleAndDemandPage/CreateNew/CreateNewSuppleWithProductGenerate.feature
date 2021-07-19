@@ -17,21 +17,26 @@ Feature:  Create new supple in Supple and Demand page
   When Select Supple radiobutton
   And Fill fields for General tab: Title "<Title>"
   And Fill fields for General tab: InternalID "<InternalID>"
-  And Fill fields for General tab: Description,Contact,Contact preferences,Delivery date,Delivery condition,Quotation deadline
+  And Fill fields for General tab: Contact
+  And Fill fields for General tab: Contact preferences
+  And Fill fields for General tab: Delivery date
+  And Fill fields for General tab: Delivery condition
+  And Fill fields for General tab: Quotation deadline
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
+  And Fill fields for General tab: Description "<Description>"
   And Fill data for Expertise tab
-  And Fill No Products data for Products tab
+  And Fill Generate data for Products tab
   And Fill data for Publication tab
   And Fill Matchmaker tab
   And Click on Save button
-  Then Requests page is opened
-  And New supple is displayed on screen "<Title>"
+ Then Requests page is opened
+ And New supple is displayed on screen "<Title>"
 
 
     Examples:
 
       | Title             | InternalID | Maximumnumberofquotations  | Description
-      | Text for supple with no product  | 565        | 6565                        | more description
+      | Text for supple with product generate   | 565        | 6565                        | more description
 
 
 

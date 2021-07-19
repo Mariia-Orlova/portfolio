@@ -57,15 +57,32 @@ export class SuppleDemandElements {
     //Product tab
     productTabLabel ='//h1[contains(text(),\'Products\')]';
     material ='[data-cy="material-chiplist"]';
+    NoProducts ='//h3[contains(text(),\'No Products\')]';
+    AddProductButton = '.show-add-product-button > .mat-focus-indicator';
+    AddNewProduct = '[data-cy="add-new-product"]';
+    ClickOnAddProduct = '[data-cy=add-product]';
+    TitleInput = '[data-cy="title-input"]';
+    QuantityInput = '[data-cy="quantity-input"]';
+    CheckProductTabAddProduct = '//h4[contains(text(),\'Add your product files relevant to your request\')]';
+    CheckProductTabSelectOptions = '//p[contains(text(),\'Select 1 of the 3 options to add products below\')]';
+    manualButton = '//h3[contains(text(),\'Manually\')]';
+    addExistingProduct = '[data-cy="add-existing-product"]';
+    ProductTabGenerate = '//h3[contains(text(),\'Generate\')]';
+    GenerateAddProduct = '[data-cy="cancel-add-files-to-create-product"]';
+    GenerateProductCheckbox = '[data-cy="product-checkbox"]';
+    SelectProduct = '[data-cy="select-product"]';
 
     //Publication
     publicationLabel = '//h1[contains(text(),\'Publication\')]';
     selectNetherlands ='[data-cy="tender-area-chiplist"]';
     clickOnInviteButton ='[data-cy="invite-button"]';
+    publicationCheckboxInnerContainer = '.mat-checkbox-inner-container';
 
 
     //Matchmaker
     matchmakerLabel = '//h1[contains(text(),\'MatchMaker\')]';
+    matchmakerInviteActiveButton = '.show-add-product-button > .mat-focus-indicator';
+
 
     // advanced option
 
@@ -347,23 +364,23 @@ export class SuppleDemandElements {
             .should('contain','Nikos  Chalkos')
             .click({force:true});
     }
-
-    selectDeliveryCondition(){
+// Check all titles. ROOT
+   selectDeliveryCondition(){
         cy.get ('mat-select[formcontrolname="deliveryCondition"]')
             .click({force:true});
         cy.get('mat-option')
             .should('contain',' Cost and freight (CFR)')
-            .and ('contain', ' Cost insurance and freight')
-            .and ('contain',' Carriage and insurance paid to')
-            .and('contain', ' Carriage paid to')
+            .and ('contain', ' Cost insurance and freight (CIF)')
+            .and ('contain',' Carriage and insurance paid to (CIP)')
+            .and('contain', ' Carriage paid to (CPT)')
             .and ('contain', ' Delivery at place (DAP)')
-            .and ('contain',' Delivered at terminal')
-            .and ('contain' ,' Delivered duty paid')
-            .and ('contain' , ' Ex works')
-            .and ('contain' , ' Free alongside ship')
-            .and ('contain' , ' Free carrier')
-            .and ('contain' , ' Free on board')
-            .and ('contain' , ' Others')
+            .and ('contain', ' ROOT.DELIVERED_AT_TERMINAL')
+            .and ('contain' ,' Deliverd duty paid (DDP)')
+            .and ('contain' , ' Ex works (EXW)')
+            .and ('contain' , ' Free alongside ship (FAS)')
+            .and ('contain' , ' Free carrier (FCA)')
+            .and ('contain' , ' Free on board (FOB)')
+            .and ('contain' , ' Others');
     }
 
     selectContact(){
@@ -371,7 +388,7 @@ export class SuppleDemandElements {
             .scrollIntoView()
             .click({force:true});
         cy.get('mat-option')
-            .should('have.value','')
+            .should('have.value','');
 
     }
 
