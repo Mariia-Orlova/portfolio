@@ -57,13 +57,13 @@ And('Fill fields for General tab: Description {string}', (Description) => {
         .scrollIntoView()
         .click({force:true})
         .type(Description)
-        .should ('have.value' , Description);
+        .should ('have.text' , Description);
 
 
 });
 
 
-And('Fill fields for General tab: Contact', (Description) => {
+And('Fill fields for General tab: Contact', () => {
     cy.contains('Contact')
         .should('contain', 'Contact');
 
@@ -71,7 +71,7 @@ And('Fill fields for General tab: Contact', (Description) => {
         .contactLabelText();
 });
 
-And('Fill fields for General tab: Contact preferences', (Description) => {
+And('Fill fields for General tab: Contact preferences', () => {
     cy.contains('Contact preferences ')
         .should('contain', 'Contact preferences ');
 
@@ -79,7 +79,7 @@ And('Fill fields for General tab: Contact preferences', (Description) => {
         .contactPreferences();
 });
 
-And('Fill fields for General tab: Delivery date', (Description) => {
+And('Fill fields for General tab: Delivery date', () => {
     cy.contains('Delivery date*')
         .should('contain', 'Delivery date*');
 
@@ -90,7 +90,7 @@ And('Fill fields for General tab: Delivery date', (Description) => {
     //.should('have.value', '06/04/2021');
 });
 
-And('Fill fields for General tab: Quotation deadline', (Description) => {
+And('Fill fields for General tab: Quotation deadline', () => {
     cy.contains('Quotation deadline*')
         .should('contain', 'Quotation deadline*');
 
@@ -101,9 +101,9 @@ And('Fill fields for General tab: Quotation deadline', (Description) => {
     //.should('have.value', '30/03/2021');
 });
 
-And('Fill fields for General tab: Delivery condition', (Description) => {
-    cy.contains('Delivery condition')
-        .should('contain', 'Delivery condition');
+And('Fill fields for General tab: Delivery condition',() => {
+    cy.contains('Delivery preference*')
+        .should('contain', 'Delivery preference*');
     suppleDemandElements
         .selectDeliveryCondition();
 });

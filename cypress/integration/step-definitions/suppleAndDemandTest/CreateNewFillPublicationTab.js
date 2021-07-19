@@ -20,27 +20,28 @@ When ('Fill data for Publication tab', () => {
 
     suppleDemandElements
         .selectNetherlandsTab();
-    cy.get(suppleDemandElements.selectNetherlands)
-        .eq(0);
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
+        .eq(0)
+        .click({force:true});
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(1)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(2)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(3)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(4)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(5)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(6)
         .click({force:true});
-    cy.get(suppleDemandElements.selectNetherlands)
+    cy.get(suppleDemandElements.tenderAreaChiplist)
         .eq(7)
         .click({force:true});
     suppleDemandElements
