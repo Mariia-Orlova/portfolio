@@ -74,7 +74,7 @@ export class SuppleDemandElements {
 
     //Publication
     publicationLabel = '//h1[contains(text(),\'Publication\')]';
-    selectNetherlands ='[data-cy="tender-area-chiplist"]';
+    tenderAreaChiplist ='[data-cy="tender-area-chiplist"]';
     clickOnInviteButton ='[data-cy="invite-button"]';
     publicationCheckboxInnerContainer = '.mat-checkbox-inner-container';
 
@@ -451,12 +451,12 @@ export class SuppleDemandElements {
 
 
     selectNetherlandsTab(){
-    cy.get (this.selectNetherlands)
+    cy.get (this.tenderAreaChiplist)
     .should (($lis) =>{
     expect ($lis).to.have.length(8)
     expect( $lis.eq(0)).to.contain (' The Netherlands ')
     expect( $lis.eq(1)).to.contain (' England ')
-    expect( $lis.eq(2)).to.contain (' Germany ')
+    expect( $lis.eq(2)).to.contain (' Germany ')gig
     expect( $lis.eq(3)).to.contain (' Belgium ')
     expect( $lis.eq(4)).to.contain ( ' Ireland ')
     expect( $lis.eq(5)).to.contain (' Northern Ireland ')
