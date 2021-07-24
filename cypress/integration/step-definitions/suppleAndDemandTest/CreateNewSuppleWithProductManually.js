@@ -115,8 +115,3 @@ When('Fill Manually data for Products tab', () => {
 
 });
 
-    Then ('Click on Save button', () => {
-    cy.get('.save-create-request-button')
-        .should('be.enabled')
-        .click({force:true});
-});

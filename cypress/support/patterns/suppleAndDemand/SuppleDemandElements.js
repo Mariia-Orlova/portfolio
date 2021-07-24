@@ -3,6 +3,11 @@ export class SuppleDemandElements {
     // Elements of Page
      createButton = '.document-add';
 
+     // Create, Save, Cancel Button in form
+     createButtonInForm = '.verify-create-request-button';
+     saveButtonInForm = '.save-create-request-button';
+     cancelButtonInForm = '.cancel-create-request-button';
+
 
     //
     createRequestForQuotationLabel= '//h1[contains(text(),\'Create Request for Quotation\')]';
@@ -71,6 +76,11 @@ export class SuppleDemandElements {
     GenerateAddProduct = '[data-cy="cancel-add-files-to-create-product"]';
     GenerateProductCheckbox = '[data-cy="product-checkbox"]';
     SelectProduct = '[data-cy="select-product"]';
+    TitleChooseExistingProduct = '//h1[@id=\'mat-dialog-title-0\']';
+    FieldSearchInput = '//input[@id=\'mat-input-7\']';
+    ColumnHead = 'mat-header-cell cdk-header-cell w-100 cdk-column-select mat-column-select ng-tns-c305-275 ng-star-inserted';
+    CheckboxProduct ='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin';
+
 
     //Publication
     publicationLabel = '//h1[contains(text(),\'Publication\')]';
@@ -185,7 +195,7 @@ export class SuppleDemandElements {
             .and ('contain', ' Agro-industry ')
             .and ('contain', ' Automotive ')
             .and ('contain', ' Construction and real estate ')
-            .and ('contain', '  Chemical industry ')
+            .and ('contain', ' Chemical industry ')
             .and ('contain', ' Electrotechnical industry ')
             .and ('contain', ' Hydraulic and pneumatic industry ')
             .and ('contain', ' Infrastructure and energy ')
@@ -201,7 +211,7 @@ export class SuppleDemandElements {
             .and ('contain', ' Product development and R&D ')
             .and ('contain', ' Ship-building ')
             .and ('contain', ' Service and maintenance ')
-            .and ('contain', '  Railway and rail vehicle industry ')
+            .and ('contain', ' Railway and rail vehicle industry ')
             .and ('contain', ' Packaging industry ')
             .and ('contain', ' Manufacture of machine tools ')
             .and ('contain', ' Food industry / Food ')
@@ -456,7 +466,7 @@ export class SuppleDemandElements {
     expect ($lis).to.have.length(8)
     expect( $lis.eq(0)).to.contain (' The Netherlands ')
     expect( $lis.eq(1)).to.contain (' England ')
-    expect( $lis.eq(2)).to.contain (' Germany ')gig
+    expect( $lis.eq(2)).to.contain (' Germany ')
     expect( $lis.eq(3)).to.contain (' Belgium ')
     expect( $lis.eq(4)).to.contain ( ' Ireland ')
     expect( $lis.eq(5)).to.contain (' Northern Ireland ')

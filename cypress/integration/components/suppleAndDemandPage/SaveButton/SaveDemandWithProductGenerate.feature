@@ -1,7 +1,7 @@
-Feature:  Save new supple in Supple and Demand page
+Feature:  Save new demand in Supple and Demand page
 
 
-  Background: Check elements for Login page
+  Scenario Outline: Save new demand with Products-Generate
     Given Open login page
     Then  Login page is opened
     And   Check elements form
@@ -12,12 +12,9 @@ Feature:  Save new supple in Supple and Demand page
     Then Auth is successfully
     When Open Supple and Demand page
     Then Supple and Demand page is opened
-
-
-  Scenario Outline: Save new supple with Products-Manually
     When Click on Create button in Supple in Supple and Demand page
     Then Create Request for Quotation page is opened
-    When Select Supple radiobutton
+    When Select Demand radiobutton
     And Fill fields for General tab: Title "<Title>"
     And Fill fields for General tab: InternalID "<InternalID>"
     And Fill fields for General tab: Contact
@@ -28,14 +25,14 @@ Feature:  Save new supple in Supple and Demand page
     And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
     And Fill fields for General tab: Description "<Description>"
     And Fill data for Expertise tab
-    And Fill Manually data for Products tab
+    And Fill Generate data for Products tab
     And Fill data for Publication tab
-    And Fill Matchmaker tab
     And Click on Save button
     Then Requests page is opened
-    And New supple is displayed on screen "<Title>"
+    And New Demand is displayed on screen "<Title>"
 
     Examples:
 
-      | Title             | InternalID | Maximumnumberofquotations  | Description
-      | Text for supple with product manually   | 2132       | 23                         | more description
+      | Title                                 | InternalID                     | Maximumnumberofquotations   | Description
+      | Text for demand with product generate | 565                            | 6565                        | more description
+

@@ -27,6 +27,7 @@ Background: Check elements for Login page
     And Fill fields for General tab: Quotation deadline
     And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
     And Fill fields for General tab: Description "<Description>"
+    And Fill Advanced options
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab

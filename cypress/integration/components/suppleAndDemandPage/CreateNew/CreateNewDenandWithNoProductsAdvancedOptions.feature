@@ -24,8 +24,9 @@ Feature:  Create new demand in Supple and Demand page
   And Fill fields for General tab: Quotation deadline
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description "<Description>"
+  And Fill Advanced options
   And Fill data for Expertise tab
-  And Fill Generate data for Products tab
+  And Fill No Products data for Products tab
   And Fill data for Publication tab
   And Click on Create button
   Then Requests page is opened
@@ -33,8 +34,8 @@ Feature:  Create new demand in Supple and Demand page
 
     Examples:
 
-      | Title                                 | InternalID                     | Maximumnumberofquotations   | Description
-      | Text for demand with product generate | 565                            | 6565                        | more description
+      | Title             | InternalID | Maximumnumberofquotations  | Description
+      | Text for demand with no product  | 565        | 6565                        | more description
 
 
 

@@ -1,7 +1,7 @@
-Feature:  Create new demand in Supple and Demand page
+Feature:  Create new supple in Supple and Demand page
 
 
-  Scenario Outline: Create new demand with Products-Generate
+  Scenario Outline: Create new supple with Products-Generate
   Given Open login page
   Then  Login page is opened
   And   Check elements form
@@ -14,7 +14,7 @@ Feature:  Create new demand in Supple and Demand page
   Then Supple and Demand page is opened
   When Click on Create button in Supple in Supple and Demand page
   Then Create Request for Quotation page is opened
-  When Select Demand radiobutton
+  When Select Supple radiobutton
   And Fill fields for General tab: Title "<Title>"
   And Fill fields for General tab: InternalID "<InternalID>"
   And Fill fields for General tab: Contact
@@ -24,17 +24,20 @@ Feature:  Create new demand in Supple and Demand page
   And Fill fields for General tab: Quotation deadline
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description "<Description>"
+  And Fill Advanced options
   And Fill data for Expertise tab
-  And Fill Generate data for Products tab
+  And Fill No Products data for Products tab
   And Fill data for Publication tab
+  And Fill Matchmaker tab
   And Click on Create button
   Then Requests page is opened
-  And New Demand is displayed on screen "<Title>"
+  And New supple is displayed on screen "<Title>"
+
 
     Examples:
 
-      | Title                                 | InternalID                     | Maximumnumberofquotations   | Description
-      | Text for demand with product generate | 565                            | 6565                        | more description
+      | Title             | InternalID | Maximumnumberofquotations  | Description
+      | Text for supple with no product  | 565        | 6565                        | more description
 
 
 

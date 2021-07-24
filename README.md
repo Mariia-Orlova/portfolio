@@ -19,10 +19,25 @@ cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
 
     -Publication block -done
     
-    
-     -Product block general - done
+    -Product block general - done
      
-      -Product block no product -done
+    -Product block no product -done
+            
+    -Product block without product  - done
+ 
+    -Advanced options on General Tab - done
       
       
  Create new demand - done
+ 
+ Create new supply - done 
+ 
+ Save new demand - done
+  
+ Save new supply - done
+
+ Cancel new demand - done
+
+ Cancel new supply - done
+ 
+ 

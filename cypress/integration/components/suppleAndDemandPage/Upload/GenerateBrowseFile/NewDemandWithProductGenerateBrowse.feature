@@ -1,4 +1,4 @@
-Feature:  Create new demand in Supple and Demand page
+Feature:  Create new demand in Supple and Demand page and upload NDA Protection
 
 
   Scenario Outline: Create new demand with Products-Generate
@@ -25,8 +25,9 @@ Feature:  Create new demand in Supple and Demand page
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description "<Description>"
   And Fill data for Expertise tab
-  And Fill Generate data for Products tab
+  And Upload Generate data for Products tab
   And Fill data for Publication tab
+  And Upload file for NDA Protection
   And Click on Create button
   Then Requests page is opened
   And New Demand is displayed on screen "<Title>"

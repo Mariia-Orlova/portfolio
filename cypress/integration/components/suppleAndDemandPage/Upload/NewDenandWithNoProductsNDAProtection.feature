@@ -25,16 +25,17 @@ Feature:  Create new demand in Supple and Demand page
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description "<Description>"
   And Fill data for Expertise tab
-  And Fill Generate data for Products tab
+  And Fill No Products data for Products tab
   And Fill data for Publication tab
+  And Upload file for NDA Protection
   And Click on Create button
   Then Requests page is opened
   And New Demand is displayed on screen "<Title>"
 
     Examples:
 
-      | Title                                 | InternalID                     | Maximumnumberofquotations   | Description
-      | Text for demand with product generate | 565                            | 6565                        | more description
+      | Title             | InternalID | Maximumnumberofquotations  | Description
+      | Text for demand with no product  | 565        | 6565                        | more description
 
 
 

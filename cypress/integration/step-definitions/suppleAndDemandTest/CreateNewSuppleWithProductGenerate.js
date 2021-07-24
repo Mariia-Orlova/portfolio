@@ -2,7 +2,7 @@ import {When,Then, And} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 
-And('Fill Generate data for Products tab', () => {
+When('Fill Generate data for Products tab', () => {
     //Check product tab
     suppleDemandElements
         .productTab();
