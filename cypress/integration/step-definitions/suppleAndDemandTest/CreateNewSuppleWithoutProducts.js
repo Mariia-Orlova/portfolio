@@ -11,8 +11,3 @@ When('Select Supple radiobutton', () => {
 });
 
 
-Then('New supple is displayed on screen {string}', (Title) => {
-    cy.get('[data-cy="sales-request-row"]')
-        .first()
-        .should('contain',Title);
-});

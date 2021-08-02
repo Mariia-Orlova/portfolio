@@ -550,28 +550,28 @@ export class SuppleDemandElements {
 
     selectCategoryElectricalEngineering(){
         cy.get(this.categoryChiplist)
-            .eq(2)
+            .eq(3)
             .should ('contain' , ' Electrical engineering')
             .click({force:true});
     }
 
     selectCategoryTransport(){
         cy.get(this.categoryChiplist)
-            .eq(3)
+            .eq(4)
             .should ('contain' , ' Transport')
             .click({force:true});
     }
 
     selectCategorySoftware(){
         cy.get(this.categoryChiplist)
-            .eq(4)
+            .eq(5)
             .should ('contain' , ' Software')
             .click({force:true});
     }
 
     selectCategoryOthers(){
         cy.get(this.categoryChiplist)
-            .eq(5)
+            .eq(6)
             .should ('contain' , ' Others')
             .click({force:true});
     }
@@ -579,14 +579,14 @@ export class SuppleDemandElements {
 
     selectCategoryArticles(){
         cy.get(this.categoryChiplist)
-            .eq(6)
+            .eq(7)
             .should ('contain' , ' Articles')
             .click({force:true});
     }
 
     selectCategorySurfaceTreatment(){
         cy.get(this.categoryChiplist)
-            .eq(7)
+            .eq(2)
             .should ('contain' , ' Surface treatment')
             .click({force:true});
     }
