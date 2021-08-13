@@ -27,8 +27,7 @@ Feature:  Create new supple in Supple and Demand page
   And Fill data for Expertise tab
   And Upload Generate data for Products tab
   And Fill data for Publication tab
-  And Upload file for NDA Protection
-  And Click on Create button
+  And Click on Save button
  Then Requests page is opened
  And New supple is displayed on screen "<Title>"
 

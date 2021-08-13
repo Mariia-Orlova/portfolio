@@ -38,6 +38,24 @@ export class SuppleDemandElements {
     descriptionLabel ='//h4[contains(text(),\'Description\')]';
     descriptionPlaceholder ='//div[contains(text(),\'Add your description here\')]';
 
+    termsAndConditionsTitle = '[style="margin-right: 24px; flex-direction: column; box-sizing: border-box; display: flex; flex: 1 1 100%; max-width: 50%;"] > .terms-title > .font-weight-700';
+    termsAndConditionSlide = '#mat-slide-toggle-1 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
+    generalFilesTitle = '[style="flex-direction: column; box-sizing: border-box; display: flex; flex: 1 1 100%; max-width: 50%;"] > .terms-title > .font-weight-700';
+    generalFilesSlide = '#mat-slide-toggle-2 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
+
+    //Navigation
+    NavigationGeneralTab1Condition = '.selected > .step-icon > .w-32';
+    NavigationGeneralTabCheck = '.selected > .mat-icon';
+    NavigationExpertiseTab1Condition = ':nth-child(2) > .step-icon > .w-32';
+    NavigationExpertiseTabCheck = ':nth-child(2) > .mat-icon';
+    NavigationProductsTab1Condition = ':nth-child(3) > .step-icon > .w-32';
+    NavigationProductsTabCheck = ':nth-child(3) > .mat-icon';
+    NavigationPublicationTab1Condition = ':nth-child(4) > .step-icon > .w-32';
+    NavigationPublicationTabCheck = ':nth-child(4) > .mat-icon';
+    NavigationMatchmakerTab1Condition = ':nth-child(5) > .step-icon > .w-32';
+    NavigationMatchmakerTabCheck = ':nth-child(5) > .mat-icon';
+
+
     // Advanced options
 
     //Contact
@@ -72,7 +90,7 @@ export class SuppleDemandElements {
     CheckProductTabSelectOptions = '//p[contains(text(),\'Select 1 of the 3 options to add products below\')]';
     manualButton = '//h3[contains(text(),\'Manually\')]';
     addExistingProduct = '[data-cy="add-existing-product"]';
-    ProductTabGenerate = '//h3[contains(text(),\'Generate\')]';
+    ProductTabGenerate = ':nth-child(2) > .mat-button-wrapper > .p-12';
     GenerateAddProduct = '[data-cy="cancel-add-files-to-create-product"]';
     GenerateProductCheckbox = '[data-cy="product-checkbox"]';
     SelectProduct = '[data-cy="select-product"]';
@@ -87,12 +105,29 @@ export class SuppleDemandElements {
     tenderAreaChiplist ='[data-cy="tender-area-chiplist"]';
     clickOnInviteButton ='[data-cy="invite-button"]';
     publicationCheckboxInnerContainer = '.mat-checkbox-inner-container';
+    publicateInviteNonTech2bTitle = '.invite-non-tech2b > .text-bold';
+    publicateInviteNonTech2bEmail = '[data-cy=informTo]';
+
 
 
     //Matchmaker
     matchmakerLabel = '//h1[contains(text(),\'MatchMaker\')]';
     matchmakerInviteActiveButton = '.show-add-product-button > .mat-focus-indicator';
 
+
+    //  Upload
+    filepath = 'UploadFiles/TestUploadFile.txt';
+
+    // Upload NDA Protection
+    NDASlideToggle =  '#mat-slide-toggle-3 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
+    NewFileUpload = '[data-cy=new-file-upload]';
+    BrowseUploadFile = '.file-upload-description > .mat-focus-indicator';
+    RequestFileUpload = '.request-file-uploader > .p-12';
+
+    //Upload Generate
+    NewFileUploadGenerate = 'file-upload-description-text cursor-pointer';
+    BrowseUploadFileGenerate = 'file-upload-description-text cursor-pointer';
+    RequestFileUploadGenerate = ':nth-child(1) > [style="flex-direction: row; box-sizing: border-box; display: flex;"] > .file-name > .w-100-p > .text-truncate';
 
     // advanced option
 
@@ -383,9 +418,9 @@ export class SuppleDemandElements {
             .and ('contain', ' Cost insurance and freight (CIF)')
             .and ('contain',' Carriage and insurance paid to (CIP)')
             .and('contain', ' Carriage paid to (CPT)')
-            .and ('contain', ' Delivery at place (DAP)')
+            .and ('contain', ' Delivered at place (DAP)')
             .and ('contain', ' ROOT.DELIVERED_AT_TERMINAL')
-            .and ('contain' ,' Deliverd duty paid (DDP)')
+            .and ('contain' ,' Delivered duty paid (DDP)')
             .and ('contain' , ' Ex works (EXW)')
             .and ('contain' , ' Free alongside ship (FAS)')
             .and ('contain' , ' Free carrier (FCA)')
@@ -485,24 +520,24 @@ export class SuppleDemandElements {
             .and ('contain', ' Also through Email ')
             .and ('contain', ' Also through Phone ');
 
-       // cy.get('mat')
+     //  cy.get('mat')
 
-        //  .click({ multiple: true });
+      //       .click({ multiple: true });
 
 
     }
     contactPreferencesAlsoEmail(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
             .click({force:true});
-        cy.get('mat-option')
+        cy.get('#mat-option-17')
             .should('contain',' Also through Email ')
-            .click({ force:true});
+           .click({ force:true});
     }
 
     contactPreferencesAlsoPhone(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
             .click( {force:true});
-        cy.get('mat-option')
+        cy.get('#mat-option-18')
             .should('contain',' Also through Phone ')
             .click({force:true});
     }

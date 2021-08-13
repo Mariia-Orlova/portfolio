@@ -2,7 +2,7 @@ import {When,Then, And} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 When ('Check first condition of Navigation Expertise tab', () => {
-    cy.get(':nth-child(2) > .step-icon > .w-32')
+    cy.get(suppleDemandElements.NavigationExpertiseTab1Condition)
         .should('contain',' 2 ');
 
 });
@@ -11,6 +11,6 @@ When ('Check first condition of Navigation Expertise tab', () => {
 
 Then ('Check navigation Expertise tab', () => {
 
-    cy.get(':nth-child(2) > .mat-icon')
+    cy.get(suppleDemandElements.NavigationExpertiseTabCheck)
         .should('contain','check_circle');
 });

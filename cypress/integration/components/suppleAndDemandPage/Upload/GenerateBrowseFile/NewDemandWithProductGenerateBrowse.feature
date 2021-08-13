@@ -27,8 +27,7 @@ Feature:  Create new demand in Supple and Demand page and upload NDA Protection
   And Fill data for Expertise tab
   And Upload Generate data for Products tab
   And Fill data for Publication tab
-  And Upload file for NDA Protection
-  And Click on Create button
+  And Click on Save button
   Then Requests page is opened
   And New Demand is displayed on screen "<Title>"
 

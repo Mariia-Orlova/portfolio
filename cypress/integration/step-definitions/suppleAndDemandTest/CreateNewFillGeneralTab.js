@@ -140,3 +140,27 @@ And ('Fill Advanced options', () =>{
     suppleDemandElements
         . selectTolerances();
 });
+
+And('Fill Terms and conditions',() => {
+    cy.get(suppleDemandElements.termsAndConditionsTitle)
+        .should('contain', 'Terms and conditions');
+     cy.get(suppleDemandElements.termsAndConditionSlide)
+        .click({force:true});
+    cy.get(suppleDemandElements.NewFileUpload)
+        .attachFile(suppleDemandElements.filepath)
+    cy.get(suppleDemandElements.RequestFileUpload)
+        .contains('TestUploadFile.txt');
+
+});
+
+And('Fill General files',() => {
+    cy.get(suppleDemandElements.generalFilesTitle)
+        .should('contain', 'General files');
+    cy.get(suppleDemandElements.generalFilesSlide)
+        .click({force:true});
+
+    cy.get(suppleDemandElements.NewFileUpload)
+        .attachFile(suppleDemandElements.filepath)
+    cy.get(suppleDemandElements.RequestFileUpload)
+        .contains('TestUploadFile.txt');
+});

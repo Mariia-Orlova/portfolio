@@ -1,4 +1,4 @@
-import {When} from "cypress-cucumber-preprocessor/steps";
+import {When,Then} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 When ('Fill data for Publication tab', () => {
@@ -70,4 +70,18 @@ When ('Fill data for Publication tab', () => {
         .should('contain' , 'Create')
         .click({force:true});
         */
+});
+
+Then ('Invite non Tech2b Companies for Publication tab: InviteEmails {string}', (InviteEmails) => {
+
+    cy.get (suppleDemandElements.publicateInviteNonTech2bTitle)
+        .should('contain',  ' Invite non Tech2B companies');
+
+
+    cy.get(suppleDemandElements.publicateInviteNonTech2bEmail)
+        .scrollIntoView()
+        .click({force:true})
+        .type(InviteEmails)
+        .should('have.value', InviteEmails);
+
 });

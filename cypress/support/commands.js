@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 //import 'cypress-drupal';
+
+import 'cypress-file-upload';
+
 Cypress.Commands.add('iframe', { prevSubject: 'element' }, ($iframe, selector) => {
     Cypress.log({
         name: 'iframe',
