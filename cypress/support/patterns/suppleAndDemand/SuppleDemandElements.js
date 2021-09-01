@@ -116,7 +116,11 @@ export class SuppleDemandElements {
 
 
     //  Upload
-    filepath = 'UploadFiles/TestUploadFile.txt';
+    filepathTxt = 'UploadFiles/TestUploadFile.txt';
+    filepathJpg = 'UploadFiles/TestJpg.jpg';
+    filepathPdf = 'UploadFiles/PDF.pdf';
+    filepathPng = 'UploadFiles/TestPng.png';
+    filepathRar = 'UploadFiles/TestRar.rar';
 
     // Upload NDA Protection
     NDASlideToggle =  '#mat-slide-toggle-3 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
@@ -129,6 +133,25 @@ export class SuppleDemandElements {
     BrowseUploadFileGenerate = 'file-upload-description-text cursor-pointer';
     RequestFileUploadGenerate = ':nth-child(1) > [style="flex-direction: row; box-sizing: border-box; display: flex;"] > .file-name > .w-100-p > .text-truncate';
 
+    //Filters
+    FiltersGeneralTitle = '#mat-expansion-panel-header-0 > .mat-content > .mat-expansion-panel-header-title';
+    FiltersGeneralButtonS = '#mat-button-toggle-4-button';
+    FiltersGeneralButtonD = '#mat-button-toggle-5-button';
+    FiltersGeneralShowMine = '#mat-checkbox-1 > .mat-checkbox-layout > .mat-checkbox-label'
+    FiltersGeneralCalculate = '#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-label';
+    FiltersCategoriesTitle = '#mat-expansion-panel-header-1 > .mat-content > .mat-expansion-panel-header-title';
+    FiltersCategoriesEngeening='#mat-checkbox-3 > .mat-checkbox-layout';
+    FiltersCategoriesTechnologies='#mat-checkbox-4 > .mat-checkbox-layout';
+    FiltersCategoriesSurfaceTreatment='#mat-checkbox-5 > .mat-checkbox-layout';
+    FiltersCategoriesElectricalEngeneering='#mat-checkbox-6 > .mat-checkbox-layout';
+    FiltersCategoriesTransport='#mat-checkbox-7 > .mat-checkbox-layout';
+    FiltersCategoriesSoftware='#mat-checkbox-8 > .mat-checkbox-layout';
+    FiltersCategoriesOthers='#mat-checkbox-9 > .mat-checkbox-layout';
+    FiltersCategoriesArticles='#mat-checkbox-10 > .mat-checkbox-layout';
+
+
+
+
     // advanced option
 
     selectAdvancedOptions(){
@@ -137,11 +160,31 @@ export class SuppleDemandElements {
             .click({force:true});
     }
 
-    labelProductionSize(){
-    cy.xpath('//h3[contains(text(),\'Production size\')]')
-        .should ('contain', 'Production size')
-    };
 
+
+    //select What is your purpose for this RFQ?
+    labelPurposeForRFQ(){
+        cy.xpath('//h3[contains(text(),\'What is your purpose for this RFQ?\')]')
+            .should ('contain', 'What is your purpose for this RFQ? ')
+    };
+    selectPurposeForRFQ (){
+        cy.get('mat-select[formcontrolname="requestPurpose"]')
+            .click({force:true});
+        cy.get('mat-option')
+            .should('contain',' Looking for a new manufacturer ')
+            .and ('contain' ,' Replacing an existing manufacturer ')
+            .and ('contain', ' No suppliers for required expertise  ')
+            .and ('contain', ' Benchmarking ')
+            .and ('contain', ' Diversifying my supply chain ')
+            .and ('contain', ' A private request ')
+            .and ('contain', ' Looking for expertise ')
+            .and ('contain', ' Other ');
+    }
+
+    labelProductionSize(){
+        cy.xpath('//h3[contains(text(),\'Production size\')]')
+            .should ('contain', 'Production size')
+    };
     //select ProductionSize
 
     selectProductionSize(){

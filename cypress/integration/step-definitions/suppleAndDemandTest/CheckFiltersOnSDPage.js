@@ -3,49 +3,49 @@ import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/Su
 
 
 When('Check Filters General', (Title) => {
-    cy.get('#mat-expansion-panel-header-0 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get(suppleDemandElements.FiltersGeneralTitle)
         .should('contain','General');
 
-    cy.get('#mat-button-toggle-4-button')
+    cy.get(suppleDemandElements.FiltersGeneralButtonS)
         .should('contain',' Supply ');
 
-    cy.get('#mat-button-toggle-5-button')
+    cy.get(suppleDemandElements.FiltersGeneralButtonD)
         .should('contain',' Demand ');
 
-    cy.get('#mat-checkbox-1 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersGeneralShowMine)
         .should('contain',' Show mine ');
 
-    cy.get('#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersGeneralCalculate)
         .should ('contain' ,' Calculate ');
 });
 
 Then('Check Filters Categories', (Title) => {
-    cy.get('#mat-expansion-panel-header-1 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get(suppleDemandElements.FiltersCategoriesTitle)
         .should('contain','Categories');
 
 
-    cy.get('#mat-checkbox-3 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesEngeening)
         .should('contain',' Engineering');
 
-    cy.get('#mat-checkbox-4 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesTechnologies)
         .and ('contain' ,' Technologies');
 
-    cy.get('#mat-checkbox-5 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesSurfaceTreatment)
         .should('contain',' Surface treatment');
 
-    cy.get('#mat-checkbox-6 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesElectricalEngeneering)
         .should('contain',' Electrical engineering');
 
-    cy.get('#mat-checkbox-7 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesTransport)
         .should('contain',' Transport');
 
-    cy.get('#mat-checkbox-8 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesSoftware)
         .should('contain',' Software');
 
-    cy.get('#mat-checkbox-9 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesOthers)
         .should('contain',' Others');
 
-    cy.get('#mat-checkbox-10 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get(suppleDemandElements.FiltersCategoriesArticles)
         .should('contain',' Articles');
 
 
@@ -139,89 +139,89 @@ And('Check Filters Quotation count', (Title) => {
 
 And('Check Filters Production planning', (Title) => {
 
-    cy.get('#mat-expansion-panel-header-6 > .mat-content > .mat-expansion-panel-header-title')
-        .should('contain',' Production planning');
+    cy.get('#mat-expansion-panel-header-7 > .mat-content > .mat-expansion-panel-header-title')
+        .should('contain','Production planning');
 
-    cy.get('#mat-checkbox-233 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-241 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Does not apply');
 
-    cy.get('#mat-checkbox-234 > .mat-checkbox-layout > .mat-checkbox-label')
-        .should ('contain' ,'Prototypes');
+    cy.get('#mat-checkbox-242 > .mat-checkbox-layout > .mat-checkbox-label')
+        .should ('contain' ,'Make-to-Stock');
 
-    cy.get('#mat-checkbox-235 > .mat-checkbox-layout > .mat-checkbox-label')
-        .should ('contain' ,'Single Pieces');
+    cy.get('#mat-checkbox-243 > .mat-checkbox-layout > .mat-checkbox-label')
+        .should ('contain' ,'Make-to-Order');
 
-    cy.get('#mat-checkbox-236 > .mat-checkbox-layout > .mat-checkbox-label')
-        .should ('contain' ,'Large Series');
+    cy.get('#mat-checkbox-244 > .mat-checkbox-layout > .mat-checkbox-label')
+        .should ('contain' ,'Engineer-to-Order');
 });
 
 
 And('Check Filters Production size', (Title) => {
 
-    cy.get('#mat-expansion-panel-header-7 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get('#mat-expansion-panel-header-8 > .mat-content > .mat-expansion-panel-header-title')
         .should('contain','Production size');
 
-    cy.get('#mat-checkbox-237 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-246 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Does not apply');
 
-    cy.get('#mat-checkbox-238 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-247 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Prototypes');
 
-    cy.get('#mat-checkbox-239 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-248 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Single Pieces');
 
-    cy.get('#mat-checkbox-240 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-249 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Large Series');
 
 });
 
 And('Check Filters Industries', (Title) => {
 
-    cy.get('#mat-expansion-panel-header-8 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get('#mat-expansion-panel-header-9 > .mat-content > .mat-expansion-panel-header-title')
         .should('contain','Industries');
 
-    cy.get('#mat-checkbox-245 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-253 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Drive and gear technology');
 
-    cy.get('#mat-checkbox-246 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-254 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Additive manufacturing');
 
-    cy.get('#mat-checkbox-247 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-255 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Agro-industry');
 
-    cy.get('#mat-checkbox-248 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-256 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'Automotive');
 
 });
 
 And('Check Filters Certificate', (Title) => {
 
-    cy.get('#mat-expansion-panel-header-9 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get('#mat-expansion-panel-header-10 > .mat-content > .mat-expansion-panel-header-title')
         .should('contain','Certificate');
 
-    cy.get('#mat-checkbox-255 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-263 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'AS9100');
 
-    cy.get('#mat-checkbox-256 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-264 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'DIN 18800-7:2008 Class A-C');
 
-    cy.get('#mat-checkbox-257 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-265 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'DIN 18800-7:2008 Class D/E');
 
 });
 
 And('Check Filters Tolerance', (Title) => {
 
-    cy.get('#mat-expansion-panel-header-10 > .mat-content > .mat-expansion-panel-header-title')
+    cy.get('#mat-expansion-panel-header-11 > .mat-content > .mat-expansion-panel-header-title')
         .should('contain','Tolerance');
 
-    cy.get('#mat-checkbox-265 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-273 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'< 0,0009');
 
-    cy.get('#mat-checkbox-265 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-274 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'± 0,001');
 
-    cy.get('#mat-checkbox-265 > .mat-checkbox-layout > .mat-checkbox-label')
+    cy.get('#mat-checkbox-275 > .mat-checkbox-layout > .mat-checkbox-label')
         .should ('contain' ,'± 0,005');
 
 });

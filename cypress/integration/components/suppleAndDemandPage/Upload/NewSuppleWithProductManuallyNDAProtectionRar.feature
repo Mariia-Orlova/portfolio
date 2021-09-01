@@ -14,7 +14,7 @@ Background: Check elements for Login page
   Then Supple and Demand page is opened
 
 
-  Scenario Outline: Create new supple with Products-Manually
+  Scenario Outline: Create new supple with Products-Manually and upload Rar file
     When Click on Create button in Supple in Supple and Demand page
     Then Create Request for Quotation page is opened
     When Select Supple radiobutton
@@ -30,7 +30,7 @@ Background: Check elements for Login page
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab
-    And Upload file for NDA Protection
+    And Upload Rar file for NDA Protection
     And Click on Create button
     Then Requests page is opened
     And New supple is displayed on screen "<Title>"

@@ -39,5 +39,25 @@ cypress run --record --key b0a13e5c-32db-4f17-98d3-7a15e7964085
  Cancel new demand - done
 
  Cancel new supply - done
+
+ Upload file (.txt, .pdf, .jpg, .rar) on NDA Protection - done
  
+ Check new supple on Request page - done
+
+ Navigation General,Expertise,Product tabs - done
+
+ Select Contact Preference - done
+ 
+ Select Terms and conditions - done
+
+ Check Filters - done
+
+
+3. Companies page
+
+Open Companies page - done
+
+Check Filters - done
+
+Check fields in Company - done
  

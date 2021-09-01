@@ -7,7 +7,7 @@ When('Fill No Products data for Products tab', () => {
     cy.xpath (suppleDemandElements.NoProducts)
         .should ('contain', 'No Products').
         click({force:true});
-
+/*
     cy.get (suppleDemandElements.AddProductButton)
         .should('be.enabled')
         .click({force:true});
@@ -87,4 +87,7 @@ When('Fill No Products data for Products tab', () => {
         .eq(1)
         .type('Description for product',{force:true})
         .should('have.value', '');
+
+
+ */
 });

@@ -30,9 +30,4 @@ When('Fill Generate data for Products tab', () => {
         .and ('be.enabled')
         .click({force:true});
 
-
-
-
-
-
 });

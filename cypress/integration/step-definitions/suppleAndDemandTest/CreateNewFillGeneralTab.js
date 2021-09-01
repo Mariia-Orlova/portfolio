@@ -102,13 +102,18 @@ And('Fill fields for General tab: Quotation deadline', () => {
 });
 
 And('Fill fields for General tab: Delivery condition',() => {
+    suppleDemandElements
+        .labelPurposeForRFQ();
+    suppleDemandElements
+        .selectPurposeForRFQ();
+});
+
+And('Fill fields for General tab: What is your purpose for this RFQ?',() => {
     cy.contains('Delivery preference*')
         .should('contain', 'Delivery preference*');
     suppleDemandElements
         .selectDeliveryCondition();
 });
-
-
 
 
 And ('Fill Advanced options', () =>{
@@ -147,7 +152,7 @@ And('Fill Terms and conditions',() => {
      cy.get(suppleDemandElements.termsAndConditionSlide)
         .click({force:true});
     cy.get(suppleDemandElements.NewFileUpload)
-        .attachFile(suppleDemandElements.filepath)
+        .attachFile(suppleDemandElements.filepathTxt)
     cy.get(suppleDemandElements.RequestFileUpload)
         .contains('TestUploadFile.txt');
 
@@ -160,7 +165,7 @@ And('Fill General files',() => {
         .click({force:true});
 
     cy.get(suppleDemandElements.NewFileUpload)
-        .attachFile(suppleDemandElements.filepath)
+        .attachFile(suppleDemandElements.filepathTxt)
     cy.get(suppleDemandElements.RequestFileUpload)
         .contains('TestUploadFile.txt');
 });

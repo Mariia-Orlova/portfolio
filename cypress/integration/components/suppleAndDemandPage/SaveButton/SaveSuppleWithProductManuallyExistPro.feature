@@ -26,6 +26,7 @@ Feature:  Save new supple in Supple and Demand page
     And Fill fields for General tab: Delivery condition
     And Fill fields for General tab: Quotation deadline
     And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
+    And Fill fields for General tab: What is your purpose for this RFQ?
     And Fill fields for General tab: Description "<Description>"
     And Fill data for Expertise tab
     And Fill Manually data add existing product for Products tab
