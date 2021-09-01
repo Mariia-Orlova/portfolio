@@ -32,7 +32,6 @@ Feature:  Create new demand in Supple and Demand page and invite non Tech2b Comp
     And Fill Manually data for Products tab
     And Fill data for Publication tab
     And Invite non Tech2b Companies for Publication tab: InviteEmails "<InviteEmails>"
-    And Fill Matchmaker tab
     And Click on Create button
     Then Requests page is opened
     And New Demand is displayed on screen "<Title>"

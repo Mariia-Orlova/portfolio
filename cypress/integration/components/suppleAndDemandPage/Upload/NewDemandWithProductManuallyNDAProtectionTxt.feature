@@ -30,7 +30,7 @@ Background: Check elements for Login page
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab
-    And Upload file for NDA Protection
+    And Upload Txt file for NDA Protection
     And Click on Create button
     Then Requests page is opened
     And New Demand is displayed on screen "<Title>"

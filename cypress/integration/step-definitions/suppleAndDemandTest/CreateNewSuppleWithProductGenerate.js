@@ -12,7 +12,7 @@ When('Fill Generate data for Products tab', () => {
         .should ('contain' ,'Select 1 of the 3 options to add products below');
 
     // Generate
-    cy.xpath(suppleDemandElements.ProductTabGenerate)
+    cy.get(suppleDemandElements.ProductTabGenerate)
        .should ('contain', 'Generate')
         .click({force:true});
 

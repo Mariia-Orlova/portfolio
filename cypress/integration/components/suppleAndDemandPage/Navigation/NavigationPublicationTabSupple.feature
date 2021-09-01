@@ -37,7 +37,7 @@ Feature:  Create new supple in Supple and Demand page and check navigation on Pu
     And Check navigation Products tab
     And Check first condition of Navigation Publication tab
     And Fill data for Publication tab
-
+    And Check navigation Publication tab
     And Fill Matchmaker tab
     And Click on Create button
     Then Requests page is opened

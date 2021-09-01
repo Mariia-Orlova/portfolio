@@ -11,6 +11,6 @@ When ('Check first condition of Navigation Publication tab', () => {
 
 Then ('Check navigation Publication tab', () => {
 
-  // cy.get(suppleDemandElements.NavigationPublicationTabCheck)
- //       .should('contain','check_circle');
+   cy.get(suppleDemandElements.NavigationPublicationTabCheck)
+        .should('contain','check_circle');
 });
