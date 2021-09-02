@@ -37,10 +37,10 @@ Feature:  Create new supple in Supple and Demand page and check navigation on Ma
     And Check navigation Products tab
     And Check first condition of Navigation Publication tab
     And Fill data for Publication tab
-
+    And Check navigation Publication tab
     And Check navigation Matchmaker tab
     And Fill Matchmaker tab
-
+    And Check navigation Matchmaker tab
     And Click on Create button
     Then Requests page is opened
     And New supple is displayed on screen "<Title>"

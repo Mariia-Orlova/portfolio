@@ -32,12 +32,7 @@ Feature:  Create new supple in Supple and Demand page and check this request on 
     And Fill Manually data for Products tab
     And Fill data for Publication tab
     And Click on Create button
-    Then Supple and Demand page is opened
-    And New supple is displayed on screen "<Title>"
 
-    When Click on Supple on Supple and Demand Page
-    Then Check field Supple Title "<Title>"
-    And Check field Supple Description "<Description>"
 
     Examples:
 

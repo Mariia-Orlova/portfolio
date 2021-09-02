@@ -25,7 +25,7 @@ Feature:  Create new demand in Supple and Demand page and upload NDA Protection
   And Fill fields for General tab: Maximum number of quotations "<Maximumnumberofquotations>"
   And Fill fields for General tab: Description "<Description>"
   And Fill data for Expertise tab
-  And Upload Generate data for Products tab
+  And Upload Txt Generate data for Products tab
   And Fill data for Publication tab
   And Click on Save button
   Then Requests page is opened
