@@ -5,7 +5,7 @@ Feature:  Create new demand in Supple and Demand page
   Given Open login page
   Then  Login page is opened
   And   Check elements form
-  When Set username 'technology@gmail.com'
+  When Set username 'tech@gmail.com'
   And Set password '123456789'
   And Check Remember Me
   And Click on log in button
