@@ -2,7 +2,13 @@ import {When,Then} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 
-When('Fill Manually data for Products tab', () => {
+When('Select Supple radiobutton', () => {
+    suppleDemandElements
+        .selectSuppleRadioButton();
+
+});
+
+Then('Fill Manually data for Products tab', () => {
     //Check product tab
     suppleDemandElements
         .productTab();

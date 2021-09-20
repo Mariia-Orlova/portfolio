@@ -110,35 +110,5 @@ export class LoggedElements {
     }
 
 
-// Forget Password page
-
-    titleForgetPasswordLabel(){
-        cy.contains('Recover your password')
-            .should('be.visible')
-            .and('contain', 'Recover your password');
-
-    };
-
-    inputEmailForgetPassword(){
-        cy.get(this.fillInput)
-            .should('be.visible')
-            .and('be.empty');
-
-    };
-
-    forgetPasswordButtonReset(){
-        cy.get(this.forgetPasswordButtonResetElement)
-            .should('be.visible')
-            .and('be.disabled')
-            .and('contain', ' Reset ');
-    };
-
-    goBackToLoginLink(){
-        cy.get (this.link)
-            .should ('be.visible')
-            .and ('contain' , ' Go back to login ')
-            .and ('have.attr','href', '/login');
-
-    }
 }
 export const loggedElements = new LoggedElements();

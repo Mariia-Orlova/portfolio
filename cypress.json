@@ -1,6 +1,6 @@
 {
-  "baseUrl": "https://test.tech2b.cc/",
-  "projectId": "3xvex3",
+  "baseUrl": "",
+  "projectId": "",
   "defaultCommandTimeout": 50000,
   "ignoreTestFiles": "*.js",
   "viewportWidth": 1600,

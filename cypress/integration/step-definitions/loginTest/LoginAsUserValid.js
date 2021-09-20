@@ -31,7 +31,7 @@ import {loggedElements} from "../../../support/patterns/login/LoggedElements";
 Then('Auth is successfully', () =>{
     cy.url()
         .should('contain', '/implicit/callback');
-   // cy.wait(4000);
+
     cy.url()
         .should('contain', '/dashboard')
 

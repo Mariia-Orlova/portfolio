@@ -47,38 +47,16 @@ When ('Fill data for Publication tab', () => {
     suppleDemandElements
         .selectTenderArea();
 
-    //Invite
 
-    /*cy.get(suppleDemandElements.clickOnInviteButton)
-        .scrollIntoView()
-        .should('be.visible')
-        .and ('contain', ' Invite ')
-        .and('not.be.disabled')
-        .click({force:true});
-    cy.get ('[class="w-100-p h-100-p dialog-container"]')
-        .should ('be.visible');
-    //select company
-    cy.get ('[mat-raised-button]')
-        .eq(0)
-        .click({force:true});
-    //click on Ok button
-    cy.get ('[data-cy="select-company-button"]')
-        .should('contain', 'Ok')
-        .click({force:true});
-
-    cy.xpath('//span[contains(text(),\'Create\')]')
-        .should('contain' , 'Create')
-        .click({force:true});
-        */
 });
 
-Then ('Invite non Tech2b Companies for Publication tab: InviteEmails {string}', (InviteEmails) => {
+Then ('Invite non Tech Companies for Publication tab: InviteEmails {string}', (InviteEmails) => {
 
-    cy.get (suppleDemandElements.publicateInviteNonTech2bTitle)
-        .should('contain',  ' Invite non Tech2B companies');
+    cy.get (suppleDemandElements.publicateInviteNonTechTitle)
+        .should('contain',  ' Invite non Tech companies');
 
 
-    cy.get(suppleDemandElements.publicateInviteNonTech2bEmail)
+    cy.get(suppleDemandElements.publicateInviteNonTechEmail)
         .scrollIntoView()
         .click({force:true})
         .type(InviteEmails)

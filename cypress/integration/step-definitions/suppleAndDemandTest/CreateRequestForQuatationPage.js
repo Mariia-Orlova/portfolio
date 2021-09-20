@@ -6,7 +6,7 @@ When ('Create Request for Quotation page is opened', () => {
     cy.url()
         .should('contain', '/create/request');
     cy.title()
-        .should('eq', 'TECH2B - Create Request');
+        .should('eq', 'TECH - Create Request');
     suppleDemandElements
         .checkTitleAndSecondTextForCreateSuppleAndDemand();
     suppleDemandElements
@@ -23,5 +23,5 @@ Then('Requests page is opened', () => {
     cy.url()
         .should('contain','/requests');
     cy.title()
-        .should('eq', 'TECH2B - Request List');
+        .should('eq', 'TECH - Request List');
 });

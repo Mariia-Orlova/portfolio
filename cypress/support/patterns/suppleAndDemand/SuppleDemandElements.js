@@ -1,5 +1,8 @@
 export class SuppleDemandElements {
 
+    // Supple and Demand link in main menu
+     navSuppleAndDemandLink = '//h1[contains(text(),\'Supply and Demand\')]';
+
     // Elements of Page
      createButton = '.document-add';
 
@@ -42,18 +45,6 @@ export class SuppleDemandElements {
     termsAndConditionSlide = '#mat-slide-toggle-1 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
     generalFilesTitle = '[style="flex-direction: column; box-sizing: border-box; display: flex; flex: 1 1 100%; max-width: 50%;"] > .terms-title > .font-weight-700';
     generalFilesSlide = '#mat-slide-toggle-2 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
-
-    //Navigation
-    NavigationGeneralTab1Condition = '.selected > .step-icon > .w-32';
-    NavigationGeneralTabCheck = '.selected > .mat-icon';
-    NavigationExpertiseTab1Condition = ':nth-child(2) > .step-icon > .w-32';
-    NavigationExpertiseTabCheck = ':nth-child(2) > .mat-icon';
-    NavigationProductsTab1Condition = ':nth-child(3) > .step-icon > .w-32';
-    NavigationProductsTabCheck = ':nth-child(3) > .mat-icon';
-    NavigationPublicationTab1Condition = ':nth-child(4) > .step-icon > .w-32';
-    NavigationPublicationTabCheck = ':nth-child(4) > .mat-icon';
-    NavigationMatchmakerTab1Condition = ':nth-child(5) > .step-icon > .w-32';
-    NavigationMatchmakerTabCheck = ':nth-child(5) > .mat-icon';
 
 
     // Advanced options
@@ -105,51 +96,20 @@ export class SuppleDemandElements {
     tenderAreaChiplist ='[data-cy="tender-area-chiplist"]';
     clickOnInviteButton ='[data-cy="invite-button"]';
     publicationCheckboxInnerContainer = '.mat-checkbox-inner-container';
-    publicateInviteNonTech2bTitle = '.invite-non-tech2b > .text-bold';
-    publicateInviteNonTech2bEmail = '[data-cy=informTo]';
-
-
-
-    //Matchmaker
-    matchmakerLabel = '//h1[contains(text(),\'MatchMaker\')]';
-    matchmakerInviteActiveButton = '.show-add-product-button > .mat-focus-indicator';
+    publicateInviteNonTechTitle = '.invite-non-tech2b > .text-bold';
+    publicateInviteNonTechEmail = '[data-cy=informTo]';
 
 
     //  Upload
     filepathTxt = 'UploadFiles/TestUploadFile.txt';
     filepathJpg = 'UploadFiles/TestJpg.jpg';
-    filepathPdf = 'UploadFiles/PDF.pdf';
-    filepathPng = 'UploadFiles/TestPng.png';
-    filepathRar = 'UploadFiles/TestRar.rar';
+
 
     // Upload NDA Protection
     NDASlideToggle =  '#mat-slide-toggle-3 > .mat-slide-toggle-label > .mat-slide-toggle-bar';
     NewFileUpload = '[data-cy=new-file-upload]';
     BrowseUploadFile = '.file-upload-description > .mat-focus-indicator';
     RequestFileUpload = '.request-file-uploader > .p-12';
-
-    //Upload Generate
-    NewFileUploadGenerate = 'file-upload-description-text cursor-pointer';
-    BrowseUploadFileGenerate = 'file-upload-description-text cursor-pointer';
-    RequestFileUploadGenerate = ':nth-child(1) > [style="flex-direction: row; box-sizing: border-box; display: flex;"] > .file-name > .w-100-p > .text-truncate';
-
-    //Filters
-    FiltersGeneralTitle = '#mat-expansion-panel-header-0 > .mat-content > .mat-expansion-panel-header-title';
-    FiltersGeneralButtonS = '#mat-button-toggle-4-button';
-    FiltersGeneralButtonD = '#mat-button-toggle-5-button';
-    FiltersGeneralShowMine = '#mat-checkbox-1 > .mat-checkbox-layout > .mat-checkbox-label'
-    FiltersGeneralCalculate = '#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-label';
-    FiltersCategoriesTitle = '#mat-expansion-panel-header-1 > .mat-content > .mat-expansion-panel-header-title';
-    FiltersCategoriesEngeening='#mat-checkbox-3 > .mat-checkbox-layout';
-    FiltersCategoriesTechnologies='#mat-checkbox-4 > .mat-checkbox-layout';
-    FiltersCategoriesSurfaceTreatment='#mat-checkbox-5 > .mat-checkbox-layout';
-    FiltersCategoriesElectricalEngeneering='#mat-checkbox-6 > .mat-checkbox-layout';
-    FiltersCategoriesTransport='#mat-checkbox-7 > .mat-checkbox-layout';
-    FiltersCategoriesSoftware='#mat-checkbox-8 > .mat-checkbox-layout';
-    FiltersCategoriesOthers='#mat-checkbox-9 > .mat-checkbox-layout';
-    FiltersCategoriesArticles='#mat-checkbox-10 > .mat-checkbox-layout';
-
-
 
 
     // advanced option
@@ -360,15 +320,6 @@ export class SuppleDemandElements {
 
     }
 
-    /*checkTextInSuppleBlock(){
-        cy.get (this.suppleTextInBlock)
-            .should ('be.visible')
-            .and( 'contain', 'Supple');
-
-        cy.xpath (this.areYouLookingText)
-            .should ('be.visible')
-            .contains('You are looking for companies that want to make a quotation');
-    }*/
 
     selectSuppleRadioButton(){
         cy.get (this.supplySelection)
@@ -517,42 +468,6 @@ export class SuppleDemandElements {
     }
 
 
-    /*selectDeliveryCondition(){
-        cy.get('mat-select[formcontrolname="deliveryCondition"]')
-            .click({force:true});
-            cy.get('mat-option')
-            .should (($lis) =>{
-            expect ($lis).to.have.length(15)
-            expect( $lis.eq(0)).to.contain (' Cost and freight')
-                expect( $lis.eq(1)).to.contain (' Cost insurance and freight')
-                expect( $lis.eq(2)).to.contain (' Carriage and insurance paid to')
-                expect( $lis.eq(3)).to.contain (' Carriage paid to')
-                expect( $lis.eq(4)).to.contain ( ' Delivered at place')
-                expect( $lis.eq(5)).to.contain (' Delivered at terminal')
-                expect( $lis.eq(6)).to.contain (' Delivered duty paid')
-                expect( $lis.eq(7)).to.contain ( ' Ex works')
-                expect( $lis.eq(8)).to.contain ( ' Free alongside ship')
-                expect( $lis.eq(9)).to.contain ( ' Free carrier')
-                expect( $lis.eq(10)).to.contain (' Free on board')
-                expect( $lis.eq(11)).to.contain ( ' Others')
-    })}*/
-
-
-    selectNetherlandsTab(){
-    cy.get (this.tenderAreaChiplist)
-    .should (($lis) =>{
-    expect ($lis).to.have.length(8)
-    expect( $lis.eq(0)).to.contain (' The Netherlands ')
-    expect( $lis.eq(1)).to.contain (' England ')
-    expect( $lis.eq(2)).to.contain (' Germany ')
-    expect( $lis.eq(3)).to.contain (' Belgium ')
-    expect( $lis.eq(4)).to.contain ( ' Ireland ')
-    expect( $lis.eq(5)).to.contain (' Northern Ireland ')
-    expect( $lis.eq(6)).to.contain (' Scotland ')
-    expect( $lis.eq(7)).to.contain ( ' Wales ')
-
-})}
-
 
     contactPreferences(){
         cy.get('mat-select[formcontrolname="contactPreference"]')
@@ -562,10 +477,6 @@ export class SuppleDemandElements {
             .should('contain','Only through Tech2B')
             .and ('contain', ' Also through Email ')
             .and ('contain', ' Also through Phone ');
-
-     //  cy.get('mat')
-
-      //       .click({ multiple: true });
 
 
     }

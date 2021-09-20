@@ -1,4 +1,4 @@
-import {When,Then, And} from "cypress-cucumber-preprocessor/steps";
+import {When} from "cypress-cucumber-preprocessor/steps";
 import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/SuppleDemandElements";
 
 When ('Fill Manually data for Products tab', () => {
@@ -33,15 +33,7 @@ When ('Fill Manually data for Products tab', () => {
     cy.get ('.create-button')
         .should('contain', ' Add file ')
         .click({force:true});
-    // cy.get ('[class="mat-menu-content"]')
-    //   .should('be.visible');
 
-    // cy.contains ('Add new documents')
-    //  .should('contain', 'Add existing documents');
-
-    //cy.contains ('Add existing documents')
-    //  .should('contain', 'Add existing documents')
-    //  .click({force:true});
 
     //Title input
     cy.contains ('Title')

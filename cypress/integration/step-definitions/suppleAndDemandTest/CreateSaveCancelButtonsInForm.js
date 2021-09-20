@@ -4,8 +4,6 @@ import {suppleDemandElements} from "../../../support/patterns/suppleAndDemand/Su
 When('Click on Cancel button', () => {
     cy.get (suppleDemandElements.cancelButtonInForm)
         .should('be.visible')
-
-     //   .should('be.enabled');
         .click({force:true});
     cy.get ('[data-cy="confirm-button"]')
         .click ({force:true});

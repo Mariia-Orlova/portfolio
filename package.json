@@ -1,7 +1,7 @@
 {
-  "name": "tech2b",
+  "name": "tech",
   "version": "1.0.0",
-  "description": "tech2b",
+  "description": "tech",
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git"
   },
-  "author": "tech2b",
+  "author": "technology",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^8.3.1",

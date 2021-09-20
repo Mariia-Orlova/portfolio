@@ -5,8 +5,8 @@ Background: Check elements for Login page
   Given Open login page
   Then  Login page is opened
   And   Check elements form
-  When Set username 'techb2bdemochalkostechnology@gmail.com'
-  And Set password 'techb2b_demo_CHALKOSTECHNOLOGY_123456789'
+  When Set username 'technology@gmail.com'
+  And Set password '123456789'
   And Check Remember Me
   And Click on log in button
   Then Auth is successfully
@@ -32,7 +32,6 @@ Background: Check elements for Login page
     And Fill data for Expertise tab
     And Fill Manually data for Products tab
     And Fill data for Publication tab
-    And Fill Matchmaker tab
     And Click on Create button
     Then Requests page is opened
     And New supple is displayed on screen "<Title>"
